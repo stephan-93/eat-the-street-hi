@@ -1,0 +1,74 @@
+@import "base";
+
+/* #SITE SPECIFIC CUSTOM CSS (e.g. Base Overrides)
+---------------------------------
+#TYPOGRAPHY OVERRIDES
+#@FONT-FACE
+#BODY
+#HEADINGS
+#PARAGRAPHS
+#LAYOUT OVERRIDES
+#BODY
+#CONTAINER
+#NAVIGATION
+#SITE-BRANDING
+#SITE-NAVIGATION
+#CONTENT
+#SECTIONS
+--------------------------------- */
+
+/* Custom Overrides */
+
+body {
+  //background: red;
+}
+
+h1, h2, h3, h4, h5, h6 {
+}
+
+.site-navigation {
+  text-transform: uppercase;
+}
+
+
+#home {
+  section {
+    margin: auto 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .container {
+      padding: 10em 0;
+  }
+
+
+  .hero {
+    background-image:url("../img/back1.png");
+  }
+
+  .next {
+    background-image:url("../img/back2.png");
+  }
+
+  .bazaar {
+    background-image:url("../img/back3.png");
+  }
+
+  .elsewhere {
+    background-image:url("../img/back4.png");
+  }
+
+  .data {
+    background-image:url("../img/back5.png");
+  }
+}
+
+.sec-subs {
+  text-align: left;
+}
+
+.vertical-centered {
+  margin: auto;
+}
