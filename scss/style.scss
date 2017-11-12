@@ -30,19 +30,27 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
+.hero .h1 {
+  font-size: 2.125em;
+}
 
 #home {
-  section {
-    margin: auto 0;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+  section, section section {
+    margin: 0;
+    background-repeat: repeat-x;
+    background-size: contain;
+    border: none;
 
-  .container {
-      padding: 10em 0;
-  }
+    .container {
+      padding: 20px 0px;
+    }
 
+    h1 {
+      font-family: $alternative-font-family;
+      font-size: 1em;
+      text-transform: uppercase;
+    }
+  }
 
   .hero {
     background-image:url("../img/back1.png");

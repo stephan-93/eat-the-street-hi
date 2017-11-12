@@ -20,19 +20,22 @@ body {
     Based on a Traditional Typographic Scale
     48, 36, 24, 21, 18, 16
 */
-h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, h3, h4, h5, h6 {
     font-family: $heading-font-family;
     margin: .5em 0;
 }
 
-h1 {
-  font-size: 3em; /* 48px / 16px = 3em */
-  line-height: 1em;
+h1, .h1, p.h1 {
+  font-size: 3.125em; /* 48px / 16px = 3em */
+  line-height: 1.2em;
+  font-weight: lighter;
 }
 
 h2 {
   font-size: 2.25em; /* 36px / 16px = 2.25em */
   line-height: 1.1em;
+  font-weight: bold;
+  color: $accent-color;
 }
 
 h3 {
