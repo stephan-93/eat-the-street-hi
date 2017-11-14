@@ -15,8 +15,9 @@
   <!-- MAIN CSS FILE -->
   <link href="css/style.css" rel="stylesheet" type="text/css" />
 
-  <!-- GOOGLE FONTS -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,700,900|Roboto+Condensed:300|Raleway:300,400" rel="stylesheet">
+  <!-- GOOGLE FONTS AND FONT awesomeSOME-->
+  <link <link href="https://fonts.googleapis.com/css?family=Raleway:400,800|Roboto+Condensed|Roboto:300,400,700" rel="stylesheet">
+
 
 </head>
 
@@ -39,80 +40,83 @@
   </header>
 
   <main>
-    <header>
-      <section class="home hero">
-        <div class="container text-centered vertical-centered">
+    <section class="hero">
+      <div class="container text-centered vertical-centered">
 
-          <h1><img class="scale-with-grid" src="img/logo.png" alt="Eat the Street"></h1>
-          <p class="h1">Hawaii's Monthly Food Truck and Street Food Rally</p>
-          <a class="button" herf="">Learn More</a>
+        <h1><img class="scale-with-grid" src="img/logo.png" alt="Eat the Street"></h1>
+        <p class="h1 one-half column centered">Hawaii's Monthly Food Truck and Street Food&nbsp;Rally</p>
+        <a class="button" herf="">Learn More</a>
 
-        </div>
+      </div>
 
-      </section>
-    </header>
+    </section>
 
-    <section class="home next">
+    <section class="next">
 
       <div class="container text-centered">
 
         <h1 class="sec-subs">What is next</h1>
-        <h2>4th Annual Honolulu Oktoberfest</h2>
-        <p>German food, entertainment and of course&hellip; lots of beer.</p>
-        <p>September 29, 4PM–9PM / September 30, 2PM–9PM</p>
-        <p>747 Ala Moana Blvd.</p>
-        <a class="button" herf="">Beersss!!</a>
+
+        <div class="vertical-centered">
+          <h2>4th Annual Honolulu Oktoberfest</h2>
+          <p>German food, entertainment and of course&hellip; lots of beer.</p>
+          <p>September 29, 4PM–9PM / September 30, 2PM–9PM</p>
+          <p>747 Ala Moana Blvd.</p>
+          <a class="button" herf="">Beersss!!</a>
+        </div>
 
       </div>
 
     </section>
 
-    <section class="home bazaar">
+    <section class="bazaar">
 
       <div class="container text-centered">
 
         <h1 class="sec-subs">Every Friday</h1>
-        <h2>Sunset Bazaar</h2>
-        <p>Food vendors, retailers, local music, crafters, packaged goods and locally made items.</p>
-        <p>Fridays, 4PM–9PM</p>
-        <p>747 Ala Moana Blvd.</p>
-        <a class="button" herf="">Whatch the sunset</a>
-
+        <div class="vertical-centered">
+          <h2>Sunset Bazaar</h2>
+          <p>Food vendors, retailers, local music, crafters, packaged goods and locally made items.</p>
+          <p>Fridays, 4PM–9PM</p>
+          <p>747 Ala Moana Blvd.</p>
+          <a class="button" herf="">Whatch the sunset</a>
+        </div>
       </div>
     </section>
 
-    <section class="home elsewhere">
+    <section class="elsewhere">
 
       <div class="container text-centered">
 
         <h1 class="sec-subs">Elsewhere</h1>
-        <h2>Pearl City Summer Fun</h2>
-        <p>We're headed back to PCHS for our annual Eat The Street: Pearl City!</p>
-        <p>July 15, 1 PM–7 PM</p>
-        <p>2100 Hookiekie Street, Pearl City (Pearl City High School)</p>
-        <a class="button" herf="">Get there!</a>
-
+        <div class="vertical-centered">
+          <h2>Pearl City Summer Fun</h2>
+          <p>We're headed back to PCHS for our annual Eat The Street: Pearl City!</p>
+          <p>July 15, 1 PM–7 PM</p>
+          <p>2100 Hookiekie Street, Pearl City (Pearl City High School)</p>
+          <a class="button" herf="">Get there!</a>
+        </div>
       </div>
 
     </section>
 
-    <section class="home data">
+    <section class="data">
       <div class="container text-centered">
         <h1 class="sec-subs">In 6 years</h1>
+        <div class="vertical-centered">
 
-<!-- Tranform this grid into a list and create a new component to control grid lists -->
+          <ul class="group list-grid">
+            <li class="one-half"><span class="data-value h2">80+</span> Eat the Street and Events</li>
 
-        <ul>
-            <li><span= class="data-value">80+</span> Eat the Street and Events</li>
+            <li class="one-half"><span class="data-value h2">633K+ </span>Total Attendees</li>
 
-            <li><span>633K+ </span>Total Attendees</li>
+            <li class="one-half"><span class="data-value h2">18M+ </span>Spent on Local Business</li>
 
-            <li><span>18M+ </span>Spent on Local Business</li>
+            <li class="one-half"><span class="data-value h2">2M+ </span>Grindz Bought</li>
+          </ul>
 
-            <li><span>2M+ </span>Grindz Bought</li>
-        </ul>
-
-        <a class="button" herf="">Become a vendor</a>
+          <a class="button" herf="">Become a vendor</a>
+        </div>
       </div>
     </section>
 
@@ -125,22 +129,40 @@
           <h3>Eat The Stree</h3>
           <nav class="site-navigation">
             <ul>
-            <li><a href="">Up Next</a></li>
-            <li><a href="">All Events</a></li>
-            <li><a href="">About</a></li>
+              <li><a href="#">Up Next</a></li>
+              <li><a href="#">All Events</a></li>
+              <li><a href="#">About</a></li>
             </ul>
           </nav>
         </div>
 
         <div class="column one-third">
           <h3>Get News</h3>
-
+          <form>
+            <input type="email" name="email" class="" placeholder="Email (required)" required />
+            <button href="#" class="button">Subscribe</button>
+          </form>
         </div>
+
+        <div class="column one-third text-rigth">
+          <ul class="list-grid group">
+            <li><a href="https://twitter.com/EatTheStreetHI">Twitter</a></li>
+            <li><a href="https://www.facebook.com/EatTheStreetHawaii"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span><span class="hidden">Facebok</span></a></li>
+            <li><a href="https://www.instagram.com/eatthestreet/"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x fa-inverse"></i></span><span class="hidden">Instragram</span></a></li>
+            <li><a href="https://www.youtube.com/user/streetgrindzTV">Youtube</a></li>
+          </ul>
+
+          <p>A event by Street Grindz</p>
+        </div>
+
       </div>
     </div>
   </footer>
   <!-- MAIN JS -->
   <script src="js/script.js"></script>
+
+  <!-- FONT AWESOME -->
+  <script src="https://use.fontawesome.com/028c2b70b9.js"></script>
 
 </body>
 </html>

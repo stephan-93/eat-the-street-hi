@@ -442,6 +442,7 @@ header, section, footer, aside, nav, main, article, figure {
 body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   color: #333;
+  font-weight: 300;
   font-size: 87.5%;
   /* 14px; */
   line-height: 1.5em;
@@ -451,17 +452,17 @@ body {
     Based on a Traditional Typographic Scale
     48, 36, 24, 21, 18, 16
 */
-h1, .h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   margin: .5em 0; }
 
-h1, .h1, p.h1 {
+h1, .h1 {
   font-size: 3.125em;
   /* 48px / 16px = 3em */
   line-height: 1.2em;
   font-weight: lighter; }
 
-h2 {
+h2, .h2 {
   font-size: 2.25em;
   /* 36px / 16px = 2.25em */
   line-height: 1.1em;
@@ -536,6 +537,12 @@ blockquote cite:before {
 .text-centered {
   text-align: center; }
 
+.text-left {
+  text-align: left; }
+
+.text-rigth {
+  text-align: right; }
+
 .hidden {
   position: absolute;
   top: -9999px;
@@ -606,15 +613,17 @@ img.circular {
 
 /* #COMPONENTS  */
 /* #BUTTONS */
-button {
-  font-size: inherit; }
+button, .button {
+  font-size: inherit;
+  font-weight: bold;
+  text-transform: uppercase; }
 
 button, a.button {
   display: inline-block;
   background-color: #F5C815;
   border: 1px solid #F5C815;
   color: #fff;
-  padding: .75em 1em;
+  padding: 1em 1.25em;
   -webkit-border-radius: .32em;
   -moz-border-radius: .32em;
   border-radius: .32em;
@@ -633,7 +642,10 @@ button:hover, a.button:hover {
   background-color: #d5af16;
   color: #fff;
   border-color: #d5af16;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-transition: .25s background ease;
+  -o-transition: .25s background ease;
+  transition: .25s background ease; }
 
 /* LAYOUT */
 /*
@@ -691,6 +703,14 @@ body {
 .column {
   margin: 0 0 3em 0; }
 
+ul.list-grid {
+  list-style: none; }
+  ul.list-grid li {
+    float: left;
+    display: block;
+    margin: 1em auto;
+    padding: 1.5em; }
+
 /* Medium Grid (on MEDIUM+ Screen Sizes) */
 @media (min-width: 768px) {
   .column {
@@ -704,7 +724,7 @@ body {
     margin-right: auto; }
   .one-whole.column {
     width: 100%; }
-  .one-half.column {
+  .one-half, .one-half.column {
     width: 46%; }
   .one-third.column {
     width: 28%; }
@@ -1085,35 +1105,75 @@ section.hero.superlightgrey, section.hero.lightgrey, section.hero.darkgrey {
 .hero .h1 {
   font-size: 2.5em; }
 
-#home section, #home section section {
+#home section {
   margin: 0;
   background-repeat: repeat-x;
-  background-size: contain;
-  border: none; }
-  #home section .container, #home section section .container {
-    padding: 20px 0px; }
-  #home section h1, #home section section h1 {
+  background-size: auto 100%;
+  background-position: bottom;
+  image-rendering: crisp-edges;
+  position: relative; }
+  #home section .container {
+    padding: 3em 0; }
+  #home section h1 {
     font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
     font-size: 1em;
     text-transform: uppercase; }
 
 #home .hero {
-  background-image: url("../img/back1.png"); }
+  background: url("../img/back1.png");
+  min-height: 80vh; }
+  #home .hero .column {
+    margin-bottom: auto; }
+  @media (min-width: 1050px) {
+    #home .hero .column {
+      width: 580px; } }
 
 #home .next {
-  background-image: url("../img/back2.png"); }
+  background-image: url("../img/back2.png");
+  min-height: 65vh; }
 
 #home .bazaar {
-  background-image: url("../img/back3.png"); }
+  background-image: url("../img/back3.png");
+  min-height: 50vh; }
 
 #home .elsewhere {
-  background-image: url("../img/back4.png"); }
+  background-image: url("../img/back4.png");
+  min-height: 40vh; }
 
 #home .data {
-  background-image: url("../img/back5.png"); }
+  background-image: url("../img/back5.png");
+  min-height: 65vh; }
+  #home .data .data-value {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 400%; }
 
 .sec-subs {
-  text-align: left; }
+  display: block;
+  text-align: left;
+  position: absolute;
+  top: 10px; }
+
+.sec-subs:after {
+  content: '';
+  display: block;
+  border-bottom: 3px solid #F5C815;
+  width: 0%;
+  position: absolute;
+  left: .5em;
+  -webkit-transition: .45s width ease-in;
+  -o-transition: .45s width ease-in;
+  transition: .45s width ease-in; }
+
+section:hover .sec-subs:after, .section:focus .sec-subs:after {
+  width: 100%; }
 
 .vertical-centered {
-  margin: auto; }
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }

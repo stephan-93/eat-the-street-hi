@@ -1,7 +1,9 @@
 /* #COMPONENTS  */
 /* #BUTTONS */
-button {
+button, .button {
   font-size: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 button, a.button {
@@ -9,7 +11,7 @@ button, a.button {
   background-color: $link-color;
   border: 1px solid $link-color;
   color: #fff;
-  padding: .75em 1em;
+  padding: 1em 1.25em;
   -webkit-border-radius: .32em;
   -moz-border-radius: .32em;
   border-radius: .32em;
@@ -31,6 +33,5 @@ button:hover, a.button:hover {
   color: #fff;
   border-color: $link-color-dark;
   text-decoration: none;
+  transition: .25s background ease;
 }
-
-
