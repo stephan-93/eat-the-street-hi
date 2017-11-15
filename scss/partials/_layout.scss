@@ -76,17 +76,6 @@ body {
   margin: 0 0 3em 0;
 }
 
-ul.list-grid {
-  list-style: none;
-  li{
-    float: left;
-    display: block;
-    margin: 1em auto;
-    padding: 1.5em;
-  }
-}
-
-
 
 /* Medium Grid (on MEDIUM+ Screen Sizes) */
 @media (min-width:  $breakpoint-small) {
@@ -108,7 +97,7 @@ ul.list-grid {
     }
 
     .one-whole.column {	width: 100%; }
-    .one-half, .one-half.column {	width: 46%; }
+    .one-half.column {	width: 46%; }
     .one-third.column {	width: 28%; }
     .two-thirds.column { width: 64%; }
     .one-fourth.column { width: 19%; }

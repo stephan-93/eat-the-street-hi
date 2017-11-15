@@ -1,0 +1,52 @@
+ul.list-grid {
+  list-style: none;
+
+  li {
+    float: left;
+    display: block;
+    margin: 1em auto;
+    padding: 1.5em 0;
+    padding-right: 2%;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &.one-half {
+      width: 48%;
+    }
+  }
+
+  &.text-right li, li.text-right {
+    float: right;
+  }
+
+  &.lined li {
+    padding-top: 0;
+    float: none;
+    display: inline-block;
+    margin: .75em auto;
+  }
+}
+
+@media (max-width: $breakpoint-small - 1)  {
+  li {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ul.stacked li {
+    clear: both;
+    float: none;
+    padding-right: 0;
+  }
+
+  ul.lined {
+    text-align: center;
+  }
+
+}

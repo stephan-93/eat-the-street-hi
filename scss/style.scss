@@ -23,11 +23,24 @@
   text-transform: uppercase;
 }
 
+/*CUSTOM HERO HEADLINE*/
+
 .hero .h1 {
   font-size: 2.5em;
 }
 
+
+/*HOME SECTION CUSTOMIZATION*/
+
+/*SIDE ART DIV*/
+.site-art {
+  content: '';
+  width: 100%;
+  height: 105%;
+}
+
 #home {
+
   section {
     margin: 0;
     background-repeat: repeat-x;
@@ -58,16 +71,129 @@
         width: 580px;
       }
     }
+
+    .side-art::before {
+      content: '';
+      position: absolute;
+      background: url("../img/PalmL1.png") no-repeat -3em 10%;
+      background-size: contain;
+      width: 30%;
+      height: 105%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .side-art::after {
+      content: '';
+      position: absolute;
+      background: url("../img/PalmL3.png") no-repeat 2.5em 100%;
+      background-size: contain;
+      width: 30%;
+      height: 105%;
+      top: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .middle-art::before {
+      content: '';
+      position: absolute;
+      background: url("../img/Ligths.png") no-repeat -2.5em -1%;
+      background-size: contain;
+      width: 105%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      image-rendering: crisp-edges;
+    }
+
+    .middle-art::after {
+      content: '';
+      position: absolute;
+      background: url("../img/Ligths2.png") no-repeat 0 15%;
+      background-size: contain;
+      width: 105%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      image-rendering: crisp-edges;
+    }
   }
 
   .next {
     background-image:url("../img/back2.png");
     min-height: 65vh;
+
+    .side-art::before {
+      content: '';
+      position: absolute;
+      background: url("../img/tiles1.png") no-repeat -6em 10%;
+      background-size: cover;
+      background-position: right;
+      width: 23%;
+      height: 110%;
+      bottom: -1em;
+      left: 0;
+      z-index: 1;
+    }
+
+    .side-art::after {
+      content: '';
+      position: absolute;
+      background: url("../img/tiles2.png") no-repeat 6em 10%;
+      background-size: cover;
+      background-position: left;
+      width: 23%;
+      height: 110%;
+      top: -1em;
+      right: 0;
+      z-index: 1;
+    }
   }
 
   .bazaar {
     background-image:url("../img/back3.png");
     min-height: 50vh;
+
+    .side-art::before {
+      content: '';
+      position: absolute;
+      background: url("../img/palml8.png") no-repeat -2.5em 15%;
+      background-size: contain;
+      width: 25%;
+      height: 110%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .side-art::after {
+      content: '';
+      position: absolute;
+      background: url("../img/sun.png") no-repeat 2.5em 100%;
+      background-size: contain;
+      width: 22%;
+      height: 110%;
+      top: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .middle-art::before {
+      content: '';
+      position: absolute;
+      background: url("../img/beachscape.png") no-repeat -2.5em 90%;
+      background-size: contain;
+      width: 40%;
+      height: 110%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      image-rendering: crisp-edges;
+    }
   }
 
   .elsewhere {
@@ -92,6 +218,7 @@
   text-align: left;
   position: absolute;
   top: 10px;
+  z-index: 2;
 }
 
 .sec-subs:after {
@@ -101,7 +228,7 @@
   width: 0%;
   position: absolute;
   left: .5em;
-  transition: .45s width ease-in;
+  transition: .3s width ease-in;
 }
 
 section:hover .sec-subs:after, .section:focus .sec-subs:after{
@@ -109,9 +236,27 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after{
 }
 
 .vertical-centered {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.flex-centered {
+  display: flex;
+  align-items: center;
+}
+
+footer {
+
+  .site-navigation {
+    display: block;
+  }
+
+  form input, form textarea {
+    border: none;
+    border-bottom: 2px solid $text-color;
+  }
+
+  .fa-circle {
+    color: $link-color;
+  }
 }
