@@ -41,22 +41,27 @@
 
 #home {
 
-  section {
+  section, section.hero {
     margin: 0;
     background-repeat: repeat-x;
     background-size: auto 100%;
     background-position: bottom;
-    image-rendering: crisp-edges;
     position: relative;
 
     .container {
-      padding: 3em 0;
+      padding: 2em 0;
     }
 
     h1 {
       font-family: $alternative-font-family;
       font-size: 1em;
       text-transform: uppercase;
+      margin: auto;
+      padding-top: 1em;
+      img {
+        max-width: 500px;
+        width: 70%;
+      }
     }
   }
 
@@ -75,7 +80,7 @@
     .side-art::before {
       content: '';
       position: absolute;
-      background: url("../img/PalmL1.png") no-repeat -3em 10%;
+      background: url("../img/palm1.png") no-repeat -3em 10%;
       background-size: contain;
       width: 30%;
       height: 105%;
@@ -87,8 +92,9 @@
     .side-art::after {
       content: '';
       position: absolute;
-      background: url("../img/PalmL3.png") no-repeat 2.5em 100%;
-      background-size: contain;
+      background: url("../img/palm4.png") no-repeat;
+      background-size: 100% auto;
+      background-position: -10% bottom;
       width: 30%;
       height: 105%;
       top: 0;
@@ -99,9 +105,10 @@
     .middle-art::before {
       content: '';
       position: absolute;
-      background: url("../img/Ligths.png") no-repeat -2.5em -1%;
-      background-size: contain;
-      width: 105%;
+      background: url("../img/ligths1.png") no-repeat;
+      background-size: 110% auto;
+      background-position: center 2%;
+      width: 100%;
       height: 100%;
       top: 0;
       right: 0;
@@ -112,9 +119,10 @@
     .middle-art::after {
       content: '';
       position: absolute;
-      background: url("../img/Ligths2.png") no-repeat 0 15%;
-      background-size: contain;
-      width: 105%;
+      background: url("../img/ligths2.png") no-repeat;
+      background-size: 110% auto;
+      background-position: center 17%;
+      width: 100%;
       height: 100%;
       top: 0;
       left: 0;
@@ -130,9 +138,9 @@
     .side-art::before {
       content: '';
       position: absolute;
-      background: url("../img/tiles1.png") no-repeat -6em 10%;
-      background-size: cover;
-      background-position: right;
+      background: url("../img/tiles1.png") no-repeat;
+      background-size: auto 100%;
+      background-position: right top;
       width: 23%;
       height: 110%;
       bottom: -1em;
@@ -143,12 +151,12 @@
     .side-art::after {
       content: '';
       position: absolute;
-      background: url("../img/tiles2.png") no-repeat 6em 10%;
-      background-size: cover;
-      background-position: left;
+      background: url("../img/tiles2.png") no-repeat;
+      background-size: auto 100%;
+      background-position: left bottom;
       width: 23%;
-      height: 110%;
-      top: -1em;
+      height: 105%;
+      top: -.5em;
       right: 0;
       z-index: 1;
     }
@@ -161,9 +169,10 @@
     .side-art::before {
       content: '';
       position: absolute;
-      background: url("../img/palml8.png") no-repeat -2.5em 15%;
-      background-size: contain;
-      width: 25%;
+      background: url("../img/palm5.png") no-repeat;
+      background-size: 100% auto;
+      background-position: -3em center;
+      width: 20%;
       height: 110%;
       top: 0;
       left: 0;
@@ -173,8 +182,9 @@
     .side-art::after {
       content: '';
       position: absolute;
-      background: url("../img/sun.png") no-repeat 2.5em 100%;
-      background-size: contain;
+      background: url("../img/sun.png") no-repeat;
+      background-size: 100% auto;
+      background-position: 1em bottom;
       width: 22%;
       height: 110%;
       top: 0;
@@ -185,10 +195,11 @@
     .middle-art::before {
       content: '';
       position: absolute;
-      background: url("../img/beachscape.png") no-repeat -2.5em 90%;
-      background-size: contain;
+      background: url("../img/beachscape.png") no-repeat;
+      background-size: 100% auto;
+      background-position: right bottom;
       width: 40%;
-      height: 110%;
+      height: 102%;
       top: 0;
       left: 0;
       z-index: 1;
@@ -199,6 +210,33 @@
   .elsewhere {
     background-image:url("../img/back4.png");
     min-height: 40vh;
+
+    .side-art::before {
+      content: '';
+      position: absolute;
+      background: url("../img/crossing.png") no-repeat;
+      background-size: auto 80%;
+      background-position: right bottom;
+      width: 20%;
+      height: 105%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .side-art::after {
+      content: '';
+      position: absolute;
+      background: url("../img/lane.png") no-repeat;
+      background-size: auto 80%;
+      background-position: left bottom;
+      width: 20%;
+      height: 102%;
+      top: 0;
+      right: 0;
+      z-index: 1;
+    }
+
   }
 
   .data {
@@ -236,8 +274,8 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after{
 }
 
 .vertical-centered {
-  padding-top: 10%;
-  padding-bottom: 10%;
+  padding-top: 6%;
+  padding-bottom: 6%;
 }
 
 .flex-centered {
