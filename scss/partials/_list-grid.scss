@@ -19,6 +19,10 @@ ul.list-grid {
     &.one-half {
       width: 48%;
     }
+
+    &.one-third {
+      width: 31%;
+    }
   }
 
   &.text-right li, li.text-right {
