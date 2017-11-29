@@ -15,9 +15,13 @@ body {
 }
 
 .container {
-    width: 88%;
+    width: 92%;
     margin: 0 auto;
-    padding: 0 6%;
+    padding: 0 4%;
+    &.small {
+      width: 70%;
+      padding: 0 15%;
+    }
 }
 
 /* SMALL- MEDIA QUERY (e.g. for mobile overrides) */
@@ -48,6 +52,9 @@ body {
     .container {
         width: $breakpoint-medium - 150;
         padding: 0 50px;
+        &.small {
+          width: $breakpoint-medium - 400;
+        }
     }
 
 }
@@ -61,6 +68,9 @@ body {
     /* FIXED WIDTH */
     .container {
         width: $breakpoint-large - 150;
+        &.small {
+          width: $breakpoint-medium - 400;
+        }
     }
 
 }
