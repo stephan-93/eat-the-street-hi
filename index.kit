@@ -4,105 +4,90 @@
   <meta charset="utf-8" />
   <title>Eat The Street Hawaii</title>
 
-  <!-- HTML5 -->
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  <!-- @include "header.kit" -->
 
-  <!-- VIEWPORT FOR MOBILE -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <body>
+    <header class="site-header toggle-nav">
+      <!-- @include "topmenu.kit" -->
+    </header>
 
-  <!-- MAIN CSS FILE -->
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <main>
+      <section class="hero flex-centered">
+        <div class="side-art"><div class="side-art"></div></div>
+        <div class="small container text-centered">
+          <h1><img class="scale-with-grid" src="img/logo.png" alt="Eat the Street"></h1>
+          <p class="h1 one-half column centered reduced">Hawaii's Monthly Food Truck and Street Food&nbsp;Rally</p>
+          <a class="button" href="about.html">Learn More</a>
 
-  <!-- GOOGLE FONTS AND FONT awesomeSOME-->
-  <link <link href="https://fonts.googleapis.com/css?family=Raleway:400,800|Roboto+Condensed|Roboto:300,400,700" rel="stylesheet">
-
-
-</head>
-
-<body>
-  <header class="site-header toggle-nav">
-    <!-- @import header.kit -->
-  </header>
-
-  <main>
-    <section class="hero flex-centered">
-      <div class="side-art"><div class="side-art"></div></div>
-      <div class="small container text-centered">
-        <h1><img class="scale-with-grid" src="img/logo.png" alt="Eat the Street"></h1>
-        <p class="h1 one-half column centered reduced">Hawaii's Monthly Food Truck and Street Food&nbsp;Rally</p>
-        <a class="button" herf="">Learn More</a>
-
-      </div>
-
-    </section>
-
-    <section class="next flex-centered">
-      <div class="side-art"><div class="side-art"></div></div>
-      <div class="small container text-centered">
-
-        <h1 class="sec-subs">What is next</h1>
-
-        <div class="vertical-centered">
-          <h2>4th Annual Honolulu Oktoberfest</h2>
-          <p>German food, entertainment and of course&hellip; lots of beer.</p>
-          <p>September 29, 4PM–9PM / September 30, 2PM–9PM</p>
-          <p>747 Ala Moana Blvd.</p>
-          <a class="button" herf="">Beersss!!</a>
         </div>
 
-      </div>
+      </section>
 
-    </section>
+      <section class="next flex-centered">
+        <div class="side-art"><div class="side-art"></div></div>
+        <div class="container text-centered">
 
-    <section class="bazaar flex-centered">
-      <div class="side-art"><div class="side-art"></div></div>
-      <div class="small container text-centered">
+          <h1 class="sec-subs">What is next</h1>
 
-        <h1 class="sec-subs">Every Friday</h1>
-        <div class="vertical-centered">
-          <h2>Sunset Bazaar</h2>
-          <p>Food vendors, retailers, local music, crafters, packaged goods and locally made items.</p>
-          <p>Fridays, 4PM–9PM</p>
-          <p>747 Ala Moana Blvd.</p>
-          <a class="button" herf="">Whatch the sunset</a>
+          <div class="small vertical-centered">
+            <h2>4th Annual Honolulu Oktoberfest</h2>
+            <p>German food, entertainment and of course&hellip; lots of beer.</p>
+            <p>September 29, 4PM–9PM / September 30, 2PM–9PM</p>
+            <p>747 Ala Moana Blvd.</p>
+            <a class="button" href="4th-oktoberfest.html">Beersss!!</a>
+          </div>
+
         </div>
-      </div>
-    </section>
 
-    <section class="elsewhere flex-centered">
-      <div class="side-art"><div class="side-art"></div></div>
-      <div class="small container text-centered">
+      </section>
 
-        <h1 class="sec-subs">Elsewhere</h1>
-        <div class="vertical-centered">
-          <h2>Pearl City Summer Fun</h2>
-          <p>We're headed back to PCHS for our annual Eat The Street: Pearl City!</p>
-          <p>July 15, 1 PM–7 PM</p>
-          <p>2100 Hookiekie Street, Pearl City (Pearl City High School)</p>
-          <a class="button" herf="">Get there!</a>
+      <section class="bazaar flex-centered">
+        <div class="side-art"><div class="side-art"></div></div>
+        <div class="container text-centered">
+
+          <h1 class="sec-subs">Every Friday</h1>
+          <div class="small vertical-centered">
+            <h2>Sunset Bazaar</h2>
+            <p>Food vendors, retailers, local music, crafters, packaged goods and locally made items.</p>
+            <p>Fridays, 4PM–9PM</p>
+            <p>747 Ala Moana Blvd.</p>
+            <a class="button" href="sunset-bazaar.html">Whatch the sunset</a>
+          </div>
         </div>
-      </div>
+      </section>
 
-    </section>
+      <section class="elsewhere flex-centered">
+        <div class="side-art"><div class="side-art"></div></div>
+        <div class="container text-centered">
 
-    <section class="data flex-centered">
-      <div class="small container text-centered">
-        <h1 class="sec-subs">In 6 years</h1>
-        <div class="vertical-centered">
+          <h1 class="sec-subs">Elsewhere</h1>
+          <div class="small vertical-centered">
+            <h2>Pearl City Summer Fun</h2>
+            <p>We're headed back to PCHS for our annual Eat The Street: Pearl City!</p>
+            <p>July 15, 1 PM–7 PM</p>
+            <p>2100 Hookiekie Street, Pearl City (Pearl City High School)</p>
+            <a class="button" href="pearl-city.html">Get there!</a>
+          </div>
+        </div>
 
-          <ul class="group list-grid stacked">
-            <li id="events" class="one-half"><span class="data-value h2">80+ </span> Eat the Street and Events</li><div class="side-art"></div>
+      </section>
 
-            <li id="spent" class="one-half"><span class="data-value h2">18M+ </span>Spent on Local Business</li><div class="side-art"></div>
+      <section class="data flex-centered">
+        <div class="container text-centered">
+          <h1 class="sec-subs">In 6 years</h1>
+          <div class="vertical-centered">
 
-            <li id="attendees" class="one-half"><span class="data-value h2">633K+ </span>Total Attendees</li><div class="side-art"><div>
+            <ul class="group list-grid stacked">
+              <li id="events" class="one-half"><span class="data-value h2">80+ </span> Eat the Street and Events<div class="side-art"></div></li>
 
-              <li id="grindz" class="one-half"><span class="data-value h2">2M+ </span>Grindz Brought</li><div class="side-art"><div>
-              </ul>
-              <a class="button" herf="">Become a vendor</a>
-              </>
+              <li id="spent" class="one-half"><span class="data-value h2">18M+ </span>Spent on Local Business<div class="side-art"></div></li>
+
+              <li id="attendees" class="one-half"><span class="data-value h2">633K+ </span>Total Attendees<div class="side-art"></div></li>
+
+                <li id="grindz" class="one-half"><span class="data-value h2">2M+ </span>Grindz Brought<div class="side-art"></div></li>
+                </ul>
+                <a class="button" href="vendor-application.html">Become a vendor</a>
+              </div>
             </div>
           </section>
 
@@ -112,9 +97,9 @@
               <div class="row">
                 <div class="one-half column"></div>
                 <div class="one-half column">
-                  <p class="h1 reduced">Now at Kakaako Waterfront Park</p>
+                  <p class="h1">Now at Kakaako Waterfront Park</p>
                   <p>747 Ala Moana Blvd.</p>
-                  <a class="button" herf="">Directions</a>
+                  <a class="button" href="">Directions</a>
                 </div>
               </div>
             </div>

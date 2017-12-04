@@ -101,7 +101,7 @@
   position: absolute;
   background: url("../img/tiles1.png") no-repeat;
   background-size: auto 100%;
-  background-position: left -23% top 0;
+  background-position: left -15% top 0;
   width: 100%;
   height: 110%;
   bottom: -2.5%;
@@ -112,7 +112,7 @@
   position: absolute;
   background: url("../img/tiles2.png") no-repeat;
   background-size: auto 100%;
-  background-position: right -23% top 0;
+  background-position: right -15% top 0;
   width: 100%;
   height: 105%;
   top: -1.25%;
@@ -231,6 +231,9 @@
 
     .container {
       padding: 2em 0;
+      @media (min-width: $breakpoint-smaller)  {
+        min-width: 480px;
+      }
     }
 
     h1 {
@@ -242,7 +245,8 @@
   }
 
   .hero {
-    background:url("../img/back1.jpg");
+    background-color: #AEAF7B;
+    background-image: url("../img/back1.jpg");
     min-height: 80vh;
     .column {
       margin-bottom: auto;
@@ -268,6 +272,7 @@
   }
 
   .next {
+    background-color: #B4CBBF;
     background-image:url("../img/back2.jpg");
     min-height: 65vh;
 
@@ -281,11 +286,12 @@
   }
 
   .bazaar {
+    background-color: #A8876B;
     background-image:url("../img/back3.jpg");
     min-height: 50vh;
 
     .side-art::before {
-      @include palm5;
+      @include beachscape;
     }
 
     .side-art::after {
@@ -293,11 +299,16 @@
     }
 
     .side-art .side-art::before {
-      @include beachscape;
+      @include palm5;
+    }
+
+    .side-art .side-art::after {
+      background: none;
     }
   }
 
   .elsewhere {
+    background-color: #D0D6AD;
     background-image:url("../img/back4.jpg");
     min-height: 40vh;
 
@@ -312,6 +323,7 @@
   }
 
   .data {
+    background-color: #A5CEAC;
     background-image:url("../img/back5.jpg");
     min-height: 65vh;
     .data-value {
@@ -326,19 +338,20 @@
     }
 
     #spent .side-art::after {
-
+      @include spent;
     }
 
     #attendees .side-art::before {
-
+      @include steps;
     }
 
     #grindz .side-art::after {
-
+      @include grindz;
     }
   }
 
   .map {
+    background-color: #D8C6B2;
     background-image: url("../img/map.png"), url("../img/back6.jpg");
     background-repeat: no-repeat, repeat-x;
     background-position: left 60% center, center;
@@ -378,7 +391,7 @@
   transition: .3s width ease-in;
 }
 
-section:hover .sec-subs:after, .section:focus .sec-subs:after{
+section:hover .sec-subs:after, .section:focus .sec-subs:after {
   width: 100%;
 }
 
@@ -391,11 +404,15 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after{
 
 .about {
   .sub-hero .featured {
-    background: url("../img/about-photo.jpg") no-repeat;
+    background-color: #aeaf7b;
+    background-image: linear-gradient(rgba(174, 175, 123, 0.45),rgba(174, 175, 123, 0.45)), url("../img/about-photo.jpg");
     background-size: 100% auto;
     background-position: bottom 40% center;
     @media (max-width: $breakpoint-small - 1) {
       background-position: top 75% center;
+    }
+    @media (max-width: $breakpoint-smaller - 1) {
+      background-size: auto 200%;
     }
   }
 
@@ -413,6 +430,175 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after{
     @include ligths1
     background-position: top;
   }
+
+  .side-art .side-art::after {
+    background: none;
+  }
+}
+
+.sunset-bazaar {
+  .sub-hero .featured {
+    background-color: #A8876B;
+    background-image: url("");
+    background-position: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom 40% center;
+    @media (max-width: $breakpoint-small - 1) {
+      background-position: top 75% center;
+    }
+  }
+
+  .side-art::before {
+    @include beachscape
+    background-position: bottom left;
+    height: 105%;
+  }
+  .side-art::after{
+    @include sun
+    background-position: bottom right -2.5%;
+    height: 120%;
+  }
+  .side-art .side-art::before {
+    @include palm5
+    background-position: top 5% left -5%;
+  }
+
+  .side-art .side-art::after {
+    background: none;
+  }
+}
+
+.monthly-event {
+  .sub-hero .featured {
+    background-color: #B4CBBF;
+    background-image: url("");
+    background-position: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom 40% center;
+  }
+  .side-art::before {
+    @include tiles2
+    background-position: bottom 0 left -15%;
+    background-size: auto 120%;
+    height: 120%;
+  }
+  .side-art::after{
+    @include tiles2
+    background-position: bottom 0 right -7.5%;
+    background-size: auto 118%;
+    height: 120%;
+  }
+}
+
+.remote-event {
+  .sub-hero .featured {
+    background-color: #D0D6AD;
+    background-image: url("");
+    background-position: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom 40% center;
+    @media (max-width: $breakpoint-small - 1) {
+      background-position: top 75% center;
+    }
+  }
+
+  .side-art::before {
+    @include crossing
+    background-position: bottom 0 left -5%;
+    background-size: auto 90%;
+    height: 110%;
+  }
+  .side-art::after{
+    @include lane
+    background-position: bottom 0 right -5%;
+    background-size: auto 70%;
+    height: 120%;
+  }
+}
+
+.application {
+  .sub-hero .featured {
+    background-color: #A5CEAC;
+    background-image: url("");
+    background-position: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom 40% center;
+    @media (max-width: $breakpoint-small - 1) {
+      background-position: top 75% center;
+    }
+  }
+
+  .side-art::before {
+    @include steps
+    background-position: bottom 0 left -2%;
+    background-size: 30% auto;
+    height: 110%;
+  }
+  .side-art::after{
+    @include grindz
+    background-position: bottom 5% right -2%;
+    background-size: 30% auto;
+    height: 100%;
+  }
+}
+
+
+//EVENTS LISTINGS
+
+#all-events .event-listing li {
+  background-color: #ECECDB;
+  background-image: url("../img/back4.jpg");
+  background-position: bottom;
+  background-size: cover;
+  position: relative;
+  overflow: visible;
+
+  &::before{
+    content: '';
+    display: block;
+    padding-top: 100%;
+    float: left;
+  }
+
+  .h1.oversized {
+    font-size: 225%;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:hover {
+    background-color: #ECECDB;
+    background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .25)), url("../img/back4.jpg");
+  }
+}
+
+.event-subs {
+  font-family: $alternative-font-family;
+  font-size: 1em;
+  text-transform: uppercase;
+  margin: auto;
+  display: block;
+  text-align: left;
+  top: 10px;
+  z-index: 2;
+}
+
+.event-subs::after {
+  content:'';
+  overflow: hidden;
+  display: block;
+  border-bottom: 3px solid $link-color;
+  width: 0%;
+  position: relative;
+  left: .5em;
+  transition: .3s width ease-in;
+}
+
+li:hover .event-subs:after, li:focus .event-subs:after {
+  width: 100%;
 }
 
 // HELPERS
@@ -429,18 +615,58 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after{
 
 //FOOTER CUSTOMIZATION
 
-footer {
+.subpage .site-footer::before {
+  content:'';
+  display: block;
+  height: 2em;
+  width: 100%;
+  margin-bottom: .5em;
+  box-shadow: inset 0 -10px 10px 0 rgba(0,0,0,.025);
+  background-color: #D8C6B2;
+  background-image: url("../img/map.png"), url("../img/back6.jpg");
+  background-repeat: no-repeat, repeat-x;
+  background-position: top, center;
+  background-size: cover, contain;
+}
+
+.site-footer {
+  padding-top:2em;
 
   .site-navigation {
     display: block;
   }
 
-  form input, form textarea {
-    border: none;
-    border-bottom: 2px solid $text-color;
+  form {
+    margin: 0;
+    input[type=email] {
+      border: none;
+      border-bottom: 2px solid $text-color-light;
+    }
   }
 
   .fa-circle {
     color: $link-color;
+  }
+
+  p img {
+    display: inline-block;
+    height: 2.2em;
+    transform: translateY(.5em);
+    padding-left: .35em;
+  }
+
+  .site-navigation li {
+    font-weight: normal;
+    @media (min-width: $breakpoint-small) {
+      margin-left: 0;
+      text-align: left;
+      clear: both;
+      display: block;
+      a {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
 }

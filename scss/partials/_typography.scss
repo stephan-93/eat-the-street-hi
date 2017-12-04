@@ -61,8 +61,16 @@ h6, .h6 {
 }
 
 /* #PARAGRAPHS */
-p {
+p, .p {
   margin: 0 0 .5em 0;
+}
+
+em, .accent {
+  color: $accent-color;
+}
+
+strong {
+  font-weight: 700;
 }
 
 /* #LINKS */
@@ -140,6 +148,10 @@ blockquote cite:before {
     font-style: normal;
     font-weight: normal;
     clear: both;
+}
+
+.reduced {
+  font-size: 80%;
 }
 
 .uppercase {

@@ -2,12 +2,11 @@
 /*
 #MEDIA QUERIES (Mobile First)
 	#DEFAULT+ (Mobile First - Default Settings in the CSS Above)
+  #SMALLER- (Vertical Mobile only Overrides) - max-width: 480px
 	#SMALL- (Mobile Only Overrides) - max-width: 767px
 	#MEDIUM+ (Tablet) - min-width: 768px
 	#LARGE+ (Desktop) - min-width: 1050px
 	#EXTRALARGE+ (Desktop+) - min-width: 1250px  */
-
-/* SMALL+ (Mobile First Defaults) */
 
 body {
     margin: 0;
@@ -18,13 +17,10 @@ body {
     width: 92%;
     margin: 0 auto;
     padding: 0 4%;
-    &.small {
-      width: 70%;
-      padding: 0 15%;
-    }
 }
 
-/* SMALL- MEDIA QUERY (e.g. for mobile overrides) */
+/*#SMALLER- (Vertical Mobile only Overrides)*/
+
 @media (max-width: $breakpoint-small - 1)  {
 
     /* Inherits Small/Mobile Body Type from Above */
@@ -32,11 +28,22 @@ body {
 
 }
 
-/* #MEDIUM+ MEDIA QUERY */
-@media (min-width: $breakpoint-small)  {
-
+/* SMALL- MEDIA QUERY (e.g. for mobile overrides) */
+@media (max-width: $breakpoint-smaller)  {
     /* Inherits Small/Mobile Body Type from Above */
     /* Inherits Small/Mobile Fluid Width from Above */
+}
+
+/* #MEDIUM+ MEDIA QUERY */
+@media (min-width: $breakpoint-small)  {
+    /* Inherits Small/Mobile Body Type from Above */
+    /* Inherits Small/Mobile Fluid Width from Above */
+    .container {
+        &.small, .small {
+          width: 80%;
+          margin-left: auto; margin-right: auto;
+        }
+    }
 
 }
 
@@ -52,8 +59,9 @@ body {
     .container {
         width: $breakpoint-medium - 150;
         padding: 0 50px;
-        &.small {
-          width: $breakpoint-medium - 400;
+        &.small, .small {
+          width: $breakpoint-medium - 450;
+          margin-left: auto; margin-right: auto;
         }
     }
 
@@ -68,8 +76,8 @@ body {
     /* FIXED WIDTH */
     .container {
         width: $breakpoint-large - 150;
-        &.small {
-          width: $breakpoint-medium - 400;
+        &.small, .small {
+          width: $breakpoint-large - 550;
         }
     }
 

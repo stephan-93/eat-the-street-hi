@@ -7,41 +7,47 @@ form label {
 	display: block;
 }
 
-form input, 
+form input,
 form textarea {
-	font-family: Helvetica, Arial, sans-serif; 
+	font-family: $alternative-font-family;
 	font-size: 1em;
 	line-height: 1.15em;
 	display: block;
 	margin-bottom: 1.25em;
 	width: 100%;
 	color: #666;
-	padding: .25em;
-	border: 1px solid #ccc;
+	padding: .25em 0;
+	border: .5px solid $text-color-light;
 }
 
 form textarea {
-	border: 1px solid #ccc;
-    min-height: 6em;
+	border: .5px solid $text-color-light;
+	min-height: 6em;
 }
 
-form input[type=button], 
-form input[type=submit], 
+form select {
+	display: block;
+	height: 2em;
+	width: 100%;
+	color: #666;
+}
+
+form input[type=button],
+form input[type=submit],
 form input[type=reset] {
+	font-family: $body-font-family;
 	width: auto;
-	background-color: #39c;
-    border: 1px solid #39c;
+	display: inline-block;
+	background-color: $link-color;
+	border: 1px solid $link-color;
 	color: #fff;
-	padding: .75em 1em;
-	-webkit-border-radius: .32em;
-	-moz-border-radius: .32em;
+	padding: 1em 1.25em;
 	border-radius: .32em;
-    margin-top: .5em;
-	margin-bottom: .5em;
-    
-    &:hover {
-        background-color: #069;
-        border-color: #069;
-    }
-    
+	border: none;
+	line-height: 1em;
+	cursor: pointer;
+	&:hover {
+		background-color: $link-color-dark;
+		border-color: $link-color-dark;
+	}
 }
