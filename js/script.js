@@ -62,7 +62,7 @@ $('.side-art').addClass('off');
 
  // $(function() {
    $(window).on('resize load', function(){
-  if ($(window).width() <= 768) {
+  if ($(window).width() < 769) {
     $('.side-art').addClass('off');
     $(window).on("scrollstart",function() {
       $('.side-art').toggleClass('off');})

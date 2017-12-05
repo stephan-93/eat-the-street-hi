@@ -307,41 +307,54 @@
       }
     }
   }
+
   .next {
     background-color: #B4CBBF;
     background-image:url("../img/back2.jpg");
     min-height: 65vh;
 
-    .side-art::before {
-      @include tiles1;
-      @media (max-width: $breakpoint-large - 1) {
-        background-position: top 0 left -20%;
+    .side-art {
+      &::before {
+        @include tiles1;
+        @media (max-width: $breakpoint-large - 1) {
+          background-position: top 0 left -20%;
+        }
+        @media (max-width: $breakpoint-medium - 1) {
+          background-position: top 0 left -30%;
+        }
+        @media (max-width: $breakpoint-small - 1) {
+          background-position: top 0 left -50%;
+        }
+        @media (max-width: $breakpoint-smaller - 1) {
+          background-position: top left -20%;
+          background-size: auto 70%;
+        }
       }
-      @media (max-width: $breakpoint-medium - 1) {
-        background-position: top 0 left -60%;
+      &.off::before {
+        background-position: top 0 left -400%;
+        background-size: 100% 0;
       }
-      @media (max-width: $breakpoint-small - 1) {
-        background-position: top 0 left -160%;
-      }
-    }
-    &.off .side-art::before {
-      // @include off-left;
-    }
 
-    .side-art::after {
-      @include tiles2;
-      @media (max-width: $breakpoint-large - 1) {
-        background-position: top 0 right -20%;
+      &::after {
+        @include tiles2;
+        @media (max-width: $breakpoint-large - 1) {
+          background-position: top 0 right -20%;
+        }
+        @media (max-width: $breakpoint-medium - 1) {
+          background-position: top 0 right -30%;
+        }
+        @media (max-width: $breakpoint-small - 1) {
+          background-position: top 0 right -50%;
+        }
+        @media (max-width: $breakpoint-smaller - 1) {
+          background-position: bottom right -25%;
+          background-size: auto 65%;
+        }
       }
-      @media (max-width: $breakpoint-medium - 1) {
-        background-position: top 0 right -60%;
+      &.off::after {
+        background-position: top 0 right -400%;
+        background-size: 100% 0;
       }
-      @media (max-width: $breakpoint-small - 1) {
-        background-position: top 0 right -160%;
-      }
-    }
-    &.off .side-art::before {
-      // @include off-left;
     }
   }
 
@@ -350,20 +363,41 @@
     background-image:url("../img/back3.jpg");
     min-height: 50vh;
 
-    .side-art::before {
-      @include beachscape;
-    }
+    .side-art {
+      &::before {
+        @include beachscape;
+        @media (max-width: $breakpoint-small - 1) {
+          background-size: 98% auto;
+          background-position: left bottom;
+        }
+      }
+      &.off::before {
+        @include off-left;
+      }
 
-    .side-art::after {
-      @include sun;
-    }
+      &::after {
+        @include sun;
+        @media (max-width: $breakpoint-small - 1) {
+          background-size: auto 50%;
+        }
+      }
+      &.off::after {
+        @include off-right;
+      }
 
-    .side-art .side-art::before {
-      @include palm5;
-    }
+      & .side-art::before {
+        @include palm5;
+        @media (max-width: $breakpoint-small - 1) {
+          background-size: auto 50%;
+        }
+      }
+      &.off .side-art::before {
+        @include off-left;
+      }
 
-    .side-art .side-art::after {
-      background: none;
+      & .side-art::after {
+        background: none;
+      }
     }
   }
 
@@ -372,14 +406,21 @@
     background-image:url("../img/back4.jpg");
     min-height: 40vh;
 
-    .side-art::before {
-      @include crossing;
-    }
+    .side-art {
+      &::before {
+        @include crossing;
+        @media (max-width: $breakpoint-small - 1) {
+          background-position: bottom 0 left -50%;
+        }
+      }
+      &.off ::before {
+        // @include off-left;
+      }
 
-    .side-art::after {
-      @include lane;
+      &::after {
+        @include lane;
+      }
     }
-
   }
 
   .data {

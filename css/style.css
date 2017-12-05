@@ -1329,10 +1329,17 @@ form input[type=reset] {
         background-position: top 0 left -20%; } }
     @media (max-width: 1049px) {
       #home .next .side-art::before {
-        background-position: top 0 left -60%; } }
+        background-position: top 0 left -30%; } }
     @media (max-width: 767px) {
       #home .next .side-art::before {
-        background-position: top 0 left -160%; } }
+        background-position: top 0 left -50%; } }
+    @media (max-width: 479px) {
+      #home .next .side-art::before {
+        background-position: top left -20%;
+        background-size: auto 70%; } }
+  #home .next .side-art.off::before {
+    background-position: top 0 left -400%;
+    background-size: 100% 0; }
   #home .next .side-art::after {
     position: absolute;
     background: url("../img/tiles2.png") no-repeat;
@@ -1348,10 +1355,17 @@ form input[type=reset] {
         background-position: top 0 right -20%; } }
     @media (max-width: 1049px) {
       #home .next .side-art::after {
-        background-position: top 0 right -60%; } }
+        background-position: top 0 right -30%; } }
     @media (max-width: 767px) {
       #home .next .side-art::after {
-        background-position: top 0 right -160%; } }
+        background-position: top 0 right -50%; } }
+    @media (max-width: 479px) {
+      #home .next .side-art::after {
+        background-position: bottom right -25%;
+        background-size: auto 65%; } }
+  #home .next .side-art.off::after {
+    background-position: top 0 right -400%;
+    background-size: 100% 0; }
 
 #home .bazaar {
   background-color: #A8876B;
@@ -1368,6 +1382,12 @@ form input[type=reset] {
     left: 0;
     z-index: 1;
     image-rendering: crisp-edges; }
+    @media (max-width: 767px) {
+      #home .bazaar .side-art::before {
+        background-size: 98% auto;
+        background-position: left bottom; } }
+  #home .bazaar .side-art.off::before {
+    background-position-x: -100%; }
   #home .bazaar .side-art::after {
     position: absolute;
     background: url("../img/sun.png") no-repeat;
@@ -1378,6 +1398,11 @@ form input[type=reset] {
     top: 0;
     right: 0;
     z-index: 1; }
+    @media (max-width: 767px) {
+      #home .bazaar .side-art::after {
+        background-size: auto 50%; } }
+  #home .bazaar .side-art.off::after {
+    background-position-x: 200%; }
   #home .bazaar .side-art .side-art::before {
     position: absolute;
     background: url("../img/palm5.png") no-repeat;
@@ -1388,6 +1413,11 @@ form input[type=reset] {
     top: 0;
     left: 0;
     z-index: 1; }
+    @media (max-width: 767px) {
+      #home .bazaar .side-art .side-art::before {
+        background-size: auto 50%; } }
+  #home .bazaar .side-art.off .side-art::before {
+    background-position-x: -100%; }
   #home .bazaar .side-art .side-art::after {
     background: none; }
 
@@ -1405,6 +1435,9 @@ form input[type=reset] {
     top: 0;
     left: 0;
     z-index: 1; }
+    @media (max-width: 767px) {
+      #home .elsewhere .side-art::before {
+        background-position: bottom 0 left -50%; } }
   #home .elsewhere .side-art::after {
     position: absolute;
     background: url("../img/lane.png") no-repeat;
