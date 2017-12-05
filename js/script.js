@@ -33,22 +33,45 @@ document.addEventListener('DOMContentLoaded', function() {
 // };
 
 //REPLACE LAST SPACE OF PARAGUAPHS WITH NON-BREAK SPACE
+$(document).ready(function(){
 $('p').each(function(){
   var string = $(this).html();
   string = string.replace(/ ([^ ]*)$/,'&nbsp;$1');
   $(this).html(string);
 });
+})
 
 //RESIZE OVERSIDED TEXT IN LISTING
 
-var square = $('#all-events .event-listing li');
+var square = $('#all-events .event-listing');
 
-$(document).ready(function(){
-  alert("Hello World!");
-  // square.each(function(){
-  //     if (square.width() != square.height()) {
-  //       $('#all-events .event-listing li .h1').addClass("oversized");
-  //     } else {
-  //       $('#all-events .event-listing li .h1').removeClass("oversized");}
-  // })
+
+$(window).on('resize load', function(){
+  square.find('li').each(function(fn, i) {
+    $(this).find('.h1').removeClass("oversized extra-oversized");
+    if (square.width() != square.height()) {
+      $(this).find('.h1').addClass("extra-oversized");}
+      if (square.width() != square.height()) {
+        $(this).find('.h1').addClass("oversized");}
+  })
 })
+
+// SIZE ART MANIPULATION
+
+$('.side-art').addClass('off');
+
+ // $(function() {
+   $(window).on('resize load', function(){
+  if ($(window).width() <= 768) {
+    $('.side-art').addClass('off');
+    $(window).on("scrollstart",function() {
+      $('.side-art').toggleClass('off');})
+    $(window).on("scrollstop",function() {
+      $('.side-art').toggleClass('off');})
+  } else {
+    $('.side-art').removeClass('off');
+  }
+  })
+// })
+
+$.event.special.scrollstop.latency = 900;

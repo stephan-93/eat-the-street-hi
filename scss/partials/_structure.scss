@@ -21,10 +21,10 @@
     background: $background-color-header;
     border-bottom: $border-width solid $border-color;
     .container {
-        padding-top: .5em;
+        // padding-top: .5em;
 
         @media (min-width: $breakpoint-small)  {
-            padding-top: .75em;
+            // padding-top: .75em;
             //padding-bottom: .5em;
         }
     }
