@@ -59,6 +59,9 @@ ul.list-grid {
     float: none;
     display: inline-block;
     margin: .75em auto;
+    &:first-child {
+      padding-left: 0;
+    }
   }
 }
 

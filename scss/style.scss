@@ -27,6 +27,10 @@ h1,h2,h3,h4,h5,h6,p {
   position: relative;
 }
 
+body main {
+  overflow-x: hidden;
+}
+
 /*CUSTOM HERO HEADLINE*/
 
 .hero .h1 {
@@ -52,11 +56,11 @@ h1,h2,h3,h4,h5,h6,p {
 @mixin palm1 {
   position: absolute;
   background: url("../img/palm1.png") no-repeat;
-  background-size: 100% auto;
-  background-position: left top 20px;
+  background-size: contain;
+  background-position: left top;
   width: 25%;
-  height: 105%;
-  top: 0;
+  height: 75%;
+  top: 2.5%;
   left: 0;
   z-index: 1;
 }
@@ -74,11 +78,11 @@ h1,h2,h3,h4,h5,h6,p {
 @mixin palm4 {
   position: absolute;
   background: url("../img/palm4.png") no-repeat;
-  background-size: 100% auto;
-  background-position: right bottom 0px;
+  background-size: contain;
+  background-position: right bottom;
   width: 25%;
-  height: 105%;
-  top: 0;
+  height: 75%;
+  bottom: -3%;
   right: 0;
   z-index: 1;
 }
@@ -129,22 +133,22 @@ h1,h2,h3,h4,h5,h6,p {
 @mixin palm5 {
   position: absolute;
   background: url("../img/palm5.png") no-repeat;
-  background-size: 100% auto;
-  background-position: right top 22%;
+  background-size: contain;
+  background-position: left top;
   width: 22%;
-  height: 100%;
-  top: 0;
+  height: 50%;
+  top: 22%;
   left: 0;
   z-index: 1;
 }
 @mixin beachscape {
   position: absolute;
   background: url("../img/beachscape.png") no-repeat;
-  background-size: 100% auto;
-  background-position: right bottom;
+  background-size: contain;
+  background-position: left bottom;
   width: 40%;
-  height: 102%;
-  top: 0;
+  height: 50%;
+  bottom: -1%;
   left: 0;
   z-index: 1;
   image-rendering: crisp-edges;
@@ -152,22 +156,22 @@ h1,h2,h3,h4,h5,h6,p {
 @mixin sun {
   position: absolute;
   background: url("../img/sun.png") no-repeat;
-  background-size: 100% auto;
-  background-position: left bottom;
+  background-size: contain;
+  background-position: right bottom;
   width: 22%;
-  height: 110%;
-  top: 0;
+  height: 60%;
+  bottom: -2.5%;
   right: 0;
   z-index: 1;
 }
 @mixin tire {
   position: absolute;
   background: url("../img/tire.png") no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
   background-position: left bottom;
   width: 25%;
-  height: 105%;
-  top: 0;
+  height: 87%;
+  top: 15%;
   left: 0;
   z-index: 1;
 }
@@ -176,19 +180,19 @@ h1,h2,h3,h4,h5,h6,p {
   background: url("../img/lane.png") no-repeat;
   background-size: contain;
   background-position: right bottom;
-  width: 35%;
+  width: 30%;
   height: 90%;
-  bottom: 0;
+  bottom: -5%;
   right: 0;
   z-index: 1;
 }
 @mixin ligths4 {
   position: absolute;
   background: url("../img/ligths4.png") no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
   background-position: right 10px top -2px;
   width: 55%;
-  height: 105%;
+  height: 50%;
   top: 0;
   left: 0;
   z-index: 1;
@@ -196,32 +200,35 @@ h1,h2,h3,h4,h5,h6,p {
 @mixin spent {
   position: absolute;
   background: url("../img/spent.png") no-repeat;
-  background-size: 95% auto;
-  background-position: left top 10%;
+  background-size: contain;
+  background-position: right top;
   width: 20%;
-  height: 105%;
-  top: 0;
-  right: 0;
+  height: 30%;
+  top: 5%;
+  right: 2%;
+  z-index: 1;
 }
 @mixin steps {
   position: absolute;
   background: url("../img/steps.png") no-repeat;
-  background-size: 100% auto;
-  background-position: right 10px bottom 0;
+  background-size: contain;
+  background-position: left bottom;
   width: 22%;
-  height: 105%;
-  top: 0;
+  height: 35%;
+  bottom: -2%;
   left: 0;
+  z-index: 1;
 }
 @mixin grindz {
   position: absolute;
   background: url("../img/grindz.png") no-repeat;
-  background-size: 100% auto;
-  background-position: left 10px bottom 10%;
+  background-size: contain;
+  background-position: right bottom;
   width: 23%;
-  height: 105%;
-  top: 0;
+  height: 35%;
+  bottom: 4%;
   right: 0;
+  z-index: 1;
 }
 
 #home {
@@ -280,32 +287,22 @@ h1,h2,h3,h4,h5,h6,p {
     .side-art.palms {
       &::before {
         @include palm1;
-        /*@media (max-width: $breakpoint-smaller - 1) {
-          width: 35%;
-          background-position-y: 8%;
-        }
-        @media (max-width: $breakpoint-small - 1) and (orientation: portrait) {
+        @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
           width: 30%;
-          background-position-y: 10%;
         }
         @media (min-width: $breakpoint-large) {
           max-width: 550px;
-        }*/
+        }
       }
 
       &::after {
         @include palm4;
-        /*@media (max-width: $breakpoint-small - 1) and (orientation: portrait) {
+        @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
           width: 30%;
-          height: 102.5%;
-        }
-        @media (max-width: $breakpoint-smaller - 1) {
-          width: 35%;
-          height: 102.5%;
         }
         @media (min-width: $breakpoint-large) {
           max-width: 550px;
-        }*/
+        }
       }
     }
 
@@ -346,7 +343,7 @@ h1,h2,h3,h4,h5,h6,p {
     .side-art.tiles {
       &::before {
         @include tiles1;
-        @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
+        @media (max-width: $breakpoint-small - 1){
           width: 35%;
         }
         @media (min-width: $breakpoint-large) {
@@ -359,7 +356,7 @@ h1,h2,h3,h4,h5,h6,p {
 
       &::after {
         @include tiles2;
-        @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
+        @media (max-width: $breakpoint-small - 1){
           width: 35%;
         }
         @media (min-width: $breakpoint-large) {
@@ -386,6 +383,9 @@ h1,h2,h3,h4,h5,h6,p {
         @media (max-width: $breakpoint-small - 1) {
           width: 30%;
         }
+        @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium){
+          top: 15%;
+        }
       }
 
       &:before {
@@ -406,7 +406,7 @@ h1,h2,h3,h4,h5,h6,p {
           max-width: 375px;
         }
         @media (max-width: $breakpoint-small - 1) {
-          width: 25%;
+          width: 30%;
         }
       }
     }
@@ -420,10 +420,17 @@ h1,h2,h3,h4,h5,h6,p {
     .side-art.road {
       &::before {
         @include tire;
+        @media (max-width: $breakpoint-small - 1) {
+          width: 42%;
+          background-position-y: top;
+        }
       }
 
       &::after {
         @include lane;
+        @media (max-width: $breakpoint-small - 1) {
+          width: 35%;
+        }
       }
     }
   }
@@ -432,27 +439,79 @@ h1,h2,h3,h4,h5,h6,p {
     background-color: #A5CEAC;
     background-image:url("../img/back5.png");
     min-height: 65vh;
-    .data-value {
+    .data-nb {
       display: block;
+    }
+    .data-value {
       padding: 0;
-      margin: 0;
-      font-size: 400%;
+      margin: 0 auto;
+      font-style: italic;
+      font-feature-settings: "lnum" on;
+      font-size: 450%;
+    }
+    .data-unit {
+      font-style: italic;
+      color: $text-color-dark;
+      margin: 0 auto;
+      font-size: 250%;
+      + .data-plus {
+      }
+    }
+    .data-plus {
+      color: $accent-color;
+      position: absolute;
+      top: .15em;
+      margin-left: .1em;
+      font-size: 200%;
+      font-weight: 800;
     }
 
     #events .side-art::before {
       @include ligths4;
+      @media  (min-width: $breakpoint-large){
+        max-width: 1000px;
+      }
+
+      @media (max-width: $breakpoint-small - 1) {
+        width: 99%;
+      }
     }
 
     #spent .side-art::after {
       @include spent;
+      @media (max-width: $breakpoint-small - 1) {
+        top: 10%;
+        width: 45%;
+      }
+      @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium){
+        width: 20%;
+      }
+      @media  (min-width: $breakpoint-large){
+        max-width: 450px;
+      }
     }
 
     #attendees .side-art::before {
       @include steps;
+      @media (max-width: $breakpoint-small - 1) {
+        width: 50%;
+      }
+      @media  (min-width: $breakpoint-large){
+        max-width: 550px;
+      }
     }
 
     #grindz .side-art::after {
       @include grindz;
+      @media  (min-width: $breakpoint-large){
+        height: 30%;
+        max-width: 500px;
+      }
+      @media (max-width: $breakpoint-small - 1) {
+        bottom: 20%;
+        height: 25%;
+        width: 45%;
+      }
     }
   }
 
@@ -462,7 +521,7 @@ h1,h2,h3,h4,h5,h6,p {
     background-repeat: no-repeat, repeat-x;
     background-position: left 60% center, center;
     background-size: cover;
-    @media (max-width: $breakpoint-small ) {
+    @media (max-width: $breakpoint-small - 1) {
       background-position: bottom 35% left 45%, center;
       background-size: auto 150%, cover;
     }
@@ -497,7 +556,7 @@ h1,h2,h3,h4,h5,h6,p {
   transition: .3s width ease-in;
 }
 
-section:hover .sec-subs:after, .section:focus .sec-subs:after {
+section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.on:after {
   width: 100%;
 }
 
@@ -526,15 +585,7 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 
   .side-art {
     &::before {
-      @include palm3;
-      background-position: bottom 50% left -5%;
-      height: 150%;
-      @media (max-width: $breakpoint-small ) {
-        background-size: 50% auto;
-      }
-    }
-    &.on::before {
-      @include on-left;
+      @include palm3
     }
 
     &::after{

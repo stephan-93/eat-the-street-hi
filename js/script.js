@@ -18,19 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  //BALANCE PARAGRAPHS
+  balanceText($('.text-centered'));
 
 })
-
-// document.onscroll = function() {
-//
-//   //console.log("scrolling!");
-//
-//   var anim = document.querySelectorAll('.side-art');
-//   var i;
-//   for (i = 0; i < anim.length; i++) {
-//         anim[i].classList.addClass('off');
-//   }
-// };
 
 //REPLACE LAST SPACE OF PARAGUAPHS WITH NON-BREAK SPACE
 $(document).ready(function(){

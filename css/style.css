@@ -799,6 +799,8 @@ ul.list-grid {
     float: none;
     display: inline-block;
     margin: .75em auto; }
+    ul.list-grid.lined li:first-child {
+      padding-left: 0; }
 
 @media (max-width: 479px) {
   ul.list-grid li + li, li + li, li {
@@ -1224,6 +1226,9 @@ form input[type=reset] {
 h1, h2, h3, h4, h5, h6, p {
   position: relative; }
 
+body main {
+  overflow-x: hidden; }
+
 /*CUSTOM HERO HEADLINE*/
 .hero .h1 {
   font-size: 2.5em; }
@@ -1278,45 +1283,35 @@ h1, h2, h3, h4, h5, h6, p {
   #home .hero .side-art.palms::before {
     position: absolute;
     background: url("../img/palm1.png") no-repeat;
-    background-size: 100% auto;
-    background-position: left top 20px;
+    background-size: contain;
+    background-position: left top;
     width: 25%;
-    height: 105%;
-    top: 0;
+    height: 75%;
+    top: 2.5%;
     left: 0;
-    z-index: 1;
-    /*@media (max-width: $breakpoint-smaller - 1) {
-          width: 35%;
-          background-position-y: 8%;
-        }
-        @media (max-width: $breakpoint-small - 1) and (orientation: portrait) {
-          width: 30%;
-          background-position-y: 10%;
-        }
-        @media (min-width: $breakpoint-large) {
-          max-width: 550px;
-        }*/ }
+    z-index: 1; }
+    @media (max-width: 767px) and (orientation: portrait) {
+      #home .hero .side-art.palms::before {
+        width: 30%; } }
+    @media (min-width: 1250px) {
+      #home .hero .side-art.palms::before {
+        max-width: 550px; } }
   #home .hero .side-art.palms::after {
     position: absolute;
     background: url("../img/palm4.png") no-repeat;
-    background-size: 100% auto;
-    background-position: right bottom 0px;
+    background-size: contain;
+    background-position: right bottom;
     width: 25%;
-    height: 105%;
-    top: 0;
+    height: 75%;
+    bottom: -3%;
     right: 0;
-    z-index: 1;
-    /*@media (max-width: $breakpoint-small - 1) and (orientation: portrait) {
-          width: 30%;
-          height: 102.5%;
-        }
-        @media (max-width: $breakpoint-smaller - 1) {
-          width: 35%;
-          height: 102.5%;
-        }
-        @media (min-width: $breakpoint-large) {
-          max-width: 550px;
-        }*/ }
+    z-index: 1; }
+    @media (max-width: 767px) and (orientation: portrait) {
+      #home .hero .side-art.palms::after {
+        width: 30%; } }
+    @media (min-width: 1250px) {
+      #home .hero .side-art.palms::after {
+        max-width: 550px; } }
   #home .hero .side-art.ligths::before {
     position: absolute;
     background: url("../img/ligths1.png") no-repeat;
@@ -1374,7 +1369,7 @@ h1, h2, h3, h4, h5, h6, p {
     top: -7.5%;
     left: 0;
     z-index: 1; }
-    @media (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 767px) {
       #home .next .side-art.tiles::before {
         width: 35%; } }
     @media (min-width: 1250px) {
@@ -1393,7 +1388,7 @@ h1, h2, h3, h4, h5, h6, p {
     bottom: -4%;
     right: 0;
     z-index: 1; }
-    @media (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 767px) {
       #home .next .side-art.tiles::after {
         width: 35%; } }
     @media (min-width: 1250px) {
@@ -1410,11 +1405,11 @@ h1, h2, h3, h4, h5, h6, p {
   #home .bazaar .side-art.silhouette:after {
     position: absolute;
     background: url("../img/palm5.png") no-repeat;
-    background-size: 100% auto;
-    background-position: right top 22%;
+    background-size: contain;
+    background-position: left top;
     width: 22%;
-    height: 100%;
-    top: 0;
+    height: 50%;
+    top: 22%;
     left: 0;
     z-index: 1; }
     @media (min-width: 1250px) {
@@ -1423,14 +1418,17 @@ h1, h2, h3, h4, h5, h6, p {
     @media (max-width: 767px) {
       #home .bazaar .side-art.silhouette:after {
         width: 30%; } }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      #home .bazaar .side-art.silhouette:after {
+        top: 15%; } }
   #home .bazaar .side-art.silhouette:before {
     position: absolute;
     background: url("../img/beachscape.png") no-repeat;
-    background-size: 100% auto;
-    background-position: right bottom;
+    background-size: contain;
+    background-position: left bottom;
     width: 40%;
-    height: 102%;
-    top: 0;
+    height: 50%;
+    bottom: -1%;
     left: 0;
     z-index: 1;
     image-rendering: crisp-edges; }
@@ -1443,11 +1441,11 @@ h1, h2, h3, h4, h5, h6, p {
   #home .bazaar .side-art.sun:after {
     position: absolute;
     background: url("../img/sun.png") no-repeat;
-    background-size: 100% auto;
-    background-position: left bottom;
+    background-size: contain;
+    background-position: right bottom;
     width: 22%;
-    height: 110%;
-    top: 0;
+    height: 60%;
+    bottom: -2.5%;
     right: 0;
     z-index: 1; }
     @media (min-width: 1250px) {
@@ -1455,7 +1453,7 @@ h1, h2, h3, h4, h5, h6, p {
         max-width: 375px; } }
     @media (max-width: 767px) {
       #home .bazaar .side-art.sun:after {
-        width: 25%; } }
+        width: 30%; } }
 
 #home .elsewhere {
   background-color: #D0D6AD;
@@ -1464,70 +1462,127 @@ h1, h2, h3, h4, h5, h6, p {
   #home .elsewhere .side-art.road::before {
     position: absolute;
     background: url("../img/tire.png") no-repeat;
-    background-size: 100% auto;
+    background-size: contain;
     background-position: left bottom;
     width: 25%;
-    height: 105%;
-    top: 0;
+    height: 87%;
+    top: 15%;
     left: 0;
     z-index: 1; }
+    @media (max-width: 767px) {
+      #home .elsewhere .side-art.road::before {
+        width: 42%;
+        background-position-y: top; } }
   #home .elsewhere .side-art.road::after {
     position: absolute;
     background: url("../img/lane.png") no-repeat;
     background-size: contain;
     background-position: right bottom;
-    width: 35%;
+    width: 30%;
     height: 90%;
-    bottom: 0;
+    bottom: -5%;
     right: 0;
     z-index: 1; }
+    @media (max-width: 767px) {
+      #home .elsewhere .side-art.road::after {
+        width: 35%; } }
 
 #home .data {
   background-color: #A5CEAC;
   background-image: url("../img/back5.png");
   min-height: 65vh; }
+  #home .data .data-nb {
+    display: block; }
   #home .data .data-value {
-    display: block;
     padding: 0;
-    margin: 0;
-    font-size: 400%; }
+    margin: 0 auto;
+    font-style: italic;
+    -webkit-font-feature-settings: "lnum" on;
+    font-feature-settings: "lnum" on;
+    font-size: 450%; }
+  #home .data .data-unit {
+    font-style: italic;
+    color: #222;
+    margin: 0 auto;
+    font-size: 250%; }
+  #home .data .data-plus {
+    color: #16a654;
+    position: absolute;
+    top: .15em;
+    margin-left: .1em;
+    font-size: 200%;
+    font-weight: 800; }
   #home .data #events .side-art::before {
     position: absolute;
     background: url("../img/ligths4.png") no-repeat;
-    background-size: 100% auto;
+    background-size: contain;
     background-position: right 10px top -2px;
     width: 55%;
-    height: 105%;
+    height: 50%;
     top: 0;
     left: 0;
     z-index: 1; }
+    @media (min-width: 1250px) {
+      #home .data #events .side-art::before {
+        max-width: 1000px; } }
+    @media (max-width: 767px) {
+      #home .data #events .side-art::before {
+        width: 99%; } }
   #home .data #spent .side-art::after {
     position: absolute;
     background: url("../img/spent.png") no-repeat;
-    background-size: 95% auto;
-    background-position: left top 10%;
+    background-size: contain;
+    background-position: right top;
     width: 20%;
-    height: 105%;
-    top: 0;
-    right: 0; }
+    height: 30%;
+    top: 5%;
+    right: 2%;
+    z-index: 1; }
+    @media (max-width: 767px) {
+      #home .data #spent .side-art::after {
+        top: 10%;
+        width: 45%; } }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      #home .data #spent .side-art::after {
+        width: 20%; } }
+    @media (min-width: 1250px) {
+      #home .data #spent .side-art::after {
+        max-width: 450px; } }
   #home .data #attendees .side-art::before {
     position: absolute;
     background: url("../img/steps.png") no-repeat;
-    background-size: 100% auto;
-    background-position: right 10px bottom 0;
+    background-size: contain;
+    background-position: left bottom;
     width: 22%;
-    height: 105%;
-    top: 0;
-    left: 0; }
+    height: 35%;
+    bottom: -2%;
+    left: 0;
+    z-index: 1; }
+    @media (max-width: 767px) {
+      #home .data #attendees .side-art::before {
+        width: 50%; } }
+    @media (min-width: 1250px) {
+      #home .data #attendees .side-art::before {
+        max-width: 550px; } }
   #home .data #grindz .side-art::after {
     position: absolute;
     background: url("../img/grindz.png") no-repeat;
-    background-size: 100% auto;
-    background-position: left 10px bottom 10%;
+    background-size: contain;
+    background-position: right bottom;
     width: 23%;
-    height: 105%;
-    top: 0;
-    right: 0; }
+    height: 35%;
+    bottom: 4%;
+    right: 0;
+    z-index: 1; }
+    @media (min-width: 1250px) {
+      #home .data #grindz .side-art::after {
+        height: 30%;
+        max-width: 500px; } }
+    @media (max-width: 767px) {
+      #home .data #grindz .side-art::after {
+        bottom: 20%;
+        height: 25%;
+        width: 45%; } }
 
 #home .map {
   background-color: #D8C6B2;
@@ -1537,7 +1592,7 @@ h1, h2, h3, h4, h5, h6, p {
   background-size: cover;
   min-height: 750px;
   min-height: 50vh; }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     #home .map {
       background-position: bottom 35% left 45%, center;
       background-size: auto 150%, cover; } }
@@ -1564,7 +1619,7 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-transition: .3s width ease-in;
   transition: .3s width ease-in; }
 
-section:hover .sec-subs:after, .section:focus .sec-subs:after {
+section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.on:after {
   width: 100%; }
 
 .sub-hero .featured {
@@ -1596,24 +1651,16 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
   height: 105%;
   top: 0;
   right: 0;
-  z-index: 1;
-  background-position: bottom 50% left -5%;
-  height: 150%; }
-  @media (max-width: 768px) {
-    .about .side-art::before {
-      background-size: 50% auto; } }
-
-.about .side-art.on::before {
-  right: 100%; }
+  z-index: 1; }
 
 .about .side-art::after {
   position: absolute;
   background: url("../img/palm4.png") no-repeat;
-  background-size: 100% auto;
-  background-position: right bottom 0px;
+  background-size: contain;
+  background-position: right bottom;
   width: 25%;
-  height: 105%;
-  top: 0;
+  height: 75%;
+  bottom: -3%;
   right: 0;
   z-index: 1;
   background-position: bottom 35% right -10%;
@@ -1662,11 +1709,11 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 .sunset-bazaar .side-art::before {
   position: absolute;
   background: url("../img/beachscape.png") no-repeat;
-  background-size: 100% auto;
-  background-position: right bottom;
+  background-size: contain;
+  background-position: left bottom;
   width: 40%;
-  height: 102%;
-  top: 0;
+  height: 50%;
+  bottom: -1%;
   left: 0;
   z-index: 1;
   image-rendering: crisp-edges;
@@ -1676,11 +1723,11 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 .sunset-bazaar .side-art::after {
   position: absolute;
   background: url("../img/sun.png") no-repeat;
-  background-size: 100% auto;
-  background-position: left bottom;
+  background-size: contain;
+  background-position: right bottom;
   width: 22%;
-  height: 110%;
-  top: 0;
+  height: 60%;
+  bottom: -2.5%;
   right: 0;
   z-index: 1;
   background-position: bottom right -2.5%;
@@ -1689,11 +1736,11 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 .sunset-bazaar .side-art .side-art::before {
   position: absolute;
   background: url("../img/palm5.png") no-repeat;
-  background-size: 100% auto;
-  background-position: right top 22%;
+  background-size: contain;
+  background-position: left top;
   width: 22%;
-  height: 100%;
-  top: 0;
+  height: 50%;
+  top: 22%;
   left: 0;
   z-index: 1;
   background-position: top 5% left -5%; }
@@ -1749,11 +1796,11 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 .remote-event .side-art::before {
   position: absolute;
   background: url("../img/tire.png") no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
   background-position: left bottom;
   width: 25%;
-  height: 105%;
-  top: 0;
+  height: 87%;
+  top: 15%;
   left: 0;
   z-index: 1;
   background-position: bottom 0 left -5%;
@@ -1765,9 +1812,9 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
   background: url("../img/lane.png") no-repeat;
   background-size: contain;
   background-position: right bottom;
-  width: 35%;
+  width: 30%;
   height: 90%;
-  bottom: 0;
+  bottom: -5%;
   right: 0;
   z-index: 1;
   background-position: bottom 0 right -5%;
@@ -1787,12 +1834,13 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 .application .side-art::before {
   position: absolute;
   background: url("../img/steps.png") no-repeat;
-  background-size: 100% auto;
-  background-position: right 10px bottom 0;
+  background-size: contain;
+  background-position: left bottom;
   width: 22%;
-  height: 105%;
-  top: 0;
+  height: 35%;
+  bottom: -2%;
   left: 0;
+  z-index: 1;
   background-position: bottom 0 left -2%;
   background-size: 30% auto;
   height: 110%; }
@@ -1800,12 +1848,13 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 .application .side-art::after {
   position: absolute;
   background: url("../img/grindz.png") no-repeat;
-  background-size: 100% auto;
-  background-position: left 10px bottom 10%;
+  background-size: contain;
+  background-position: right bottom;
   width: 23%;
-  height: 105%;
-  top: 0;
+  height: 35%;
+  bottom: 4%;
   right: 0;
+  z-index: 1;
   background-position: bottom 5% right -2%;
   background-size: 30% auto;
   height: 100%; }
