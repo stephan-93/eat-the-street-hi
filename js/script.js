@@ -58,7 +58,7 @@ $(window).on('resize load', function(){
 
 // SIZE ART MANIPULATION
 
-$('.side-art').addClass('off');
+/*$('.side-art').addClass('off');
 
  // $(function() {
    $(window).on('resize load', function(){
@@ -72,6 +72,6 @@ $('.side-art').addClass('off');
     $('.side-art').removeClass('off');
   }
   })
-// })
+// })*/
 
 $.event.special.scrollstop.latency = 900;

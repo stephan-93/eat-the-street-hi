@@ -23,6 +23,10 @@
   text-transform: uppercase;
 }
 
+h1,h2,h3,h4,h5,h6,p {
+  position: relative;
+}
+
 /*CUSTOM HERO HEADLINE*/
 
 .hero .h1 {
@@ -40,18 +44,17 @@
   transition: all 2s ease;
 }
 
-// $off-left: left -100%;
-@mixin off-left {background-position-x: -100%;}
-@mixin off-right {background-position-x: 200%;}
-@mixin off-top {background-position-y: -120%;}
-@mixin off-bottom {background-position-y: 200%;}
+@mixin on-left {right: 100%;}
+@mixin on-right {left: 100%;}
+@mixin on-top {top: -120%;}
+@mixin on-bottom {bottom: 200%;}
 
 @mixin palm1 {
   position: absolute;
   background: url("../img/palm1.png") no-repeat;
-  background-size: 30% auto;
-  background-position: left -5% top 20px;
-  width: 100%;
+  background-size: 100% auto;
+  background-position: left top 20px;
+  width: 25%;
   height: 105%;
   top: 0;
   left: 0;
@@ -60,20 +63,20 @@
 @mixin palm3 {
   position: absolute;
   background: url("../img/palm3.png") no-repeat;
-  background-size: 30% auto;
-  background-position: left -5% top 20px;
-  width: 100%;
+  background-size: 100% auto;
+  background-position: left -5em top 20px;
+  width: 45%;
   height: 105%;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 1;
 }
 @mixin palm4 {
   position: absolute;
   background: url("../img/palm4.png") no-repeat;
-  background-size: 30% auto;
-  background-position: right -5% bottom 0px;
-  width: 100%;
+  background-size: 100% auto;
+  background-position: right bottom 0px;
+  width: 25%;
   height: 105%;
   top: 0;
   right: 0;
@@ -83,34 +86,32 @@
   position: absolute;
   background: url("../img/ligths1.png") no-repeat;
   background-size: 110% auto;
-  background-position: center 5%;
+  background-position: bottom;
   width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  z-index: 1;
+  height: calc(32% - 2.5em);
+  top: 0; left: 0; right: 0;
+  z-index: 3;
   image-rendering: crisp-edges;
 }
 @mixin ligths2 {
   position: absolute;
   background: url("../img/ligths2.png") no-repeat;
   background-size: 110% auto;
-  background-position: center 17%;
+  background-position: bottom;
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  height: 32%;
+  top: 0; left: 0; right: 0;
+  z-index: 2;
   image-rendering: crisp-edges;
 }
 @mixin tiles1 {
   position: absolute;
   background: url("../img/tiles1.png") no-repeat;
   background-size: auto 100%;
-  background-position: left -7.5% top 0;
-  width: 100%;
+  background-position: right top 0;
+  width: 28%;
   height: 110%;
-  bottom: -2.5%;
+  top: -7.5%;
   left: 0;
   z-index: 1;
 }
@@ -118,53 +119,53 @@
   position: absolute;
   background: url("../img/tiles2.png") no-repeat;
   background-size: auto 100%;
-  background-position: right -7.5% top 0;
-  width: 100%;
-  height: 105%;
-  top: -1.25%;
+  background-position: left top 0;
+  width: 28%;
+  height: 103%;
+  bottom: -4%;
   right: 0;
   z-index: 1;
 }
 @mixin palm5 {
   position: absolute;
   background: url("../img/palm5.png") no-repeat;
-  background-size: 20% auto;
-  background-position: left -5% top 30%;
-  width: 100%;
-  height: 110%;
+  background-size: 100% auto;
+  background-position: right top 22%;
+  width: 22%;
+  height: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
-}
-@mixin sun {
-  position: absolute;
-  background: url("../img/sun.png") no-repeat;
-  background-size: 22% auto;
-  background-position: right -5% bottom 0px;
-  width: 100%;
-  height: 110%;
-  top: 0;
-  right: 0;
   z-index: 1;
 }
 @mixin beachscape {
   position: absolute;
   background: url("../img/beachscape.png") no-repeat;
-  background-size: 40% auto;
-  background-position: left -3% bottom;
-  width: 100%;
+  background-size: 100% auto;
+  background-position: right bottom;
+  width: 40%;
   height: 102%;
   top: 0;
   left: 0;
   z-index: 1;
   image-rendering: crisp-edges;
 }
-@mixin crossing {
+@mixin sun {
   position: absolute;
-  background: url("../img/crossing.png") no-repeat;
-  background-size: auto 80%;
-  background-position: left -15% bottom;
-  width: 100%;
+  background: url("../img/sun.png") no-repeat;
+  background-size: 100% auto;
+  background-position: left bottom;
+  width: 22%;
+  height: 110%;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+@mixin tire {
+  position: absolute;
+  background: url("../img/tire.png") no-repeat;
+  background-size: 100% auto;
+  background-position: left bottom;
+  width: 25%;
   height: 105%;
   top: 0;
   left: 0;
@@ -173,20 +174,20 @@
 @mixin lane {
   position: absolute;
   background: url("../img/lane.png") no-repeat;
-  background-size: auto 80%;
-  background-position: right -5% bottom;
-  width: 100%;
-  height: 102%;
-  top: 0;
+  background-size: contain;
+  background-position: right bottom;
+  width: 35%;
+  height: 90%;
+  bottom: 0;
   right: 0;
   z-index: 1;
 }
 @mixin ligths4 {
   position: absolute;
   background: url("../img/ligths4.png") no-repeat;
-  background-size: 55% auto;
-  background-position: left -5% top -2px;
-  width: 100%;
+  background-size: 100% auto;
+  background-position: right 10px top -2px;
+  width: 55%;
   height: 105%;
   top: 0;
   left: 0;
@@ -195,40 +196,37 @@
 @mixin spent {
   position: absolute;
   background: url("../img/spent.png") no-repeat;
-  background-size: auto 35%;
-  background-position: right 3% top 10%;
-  width: 100%;
+  background-size: 95% auto;
+  background-position: left top 10%;
+  width: 20%;
   height: 105%;
   top: 0;
-  left: 0;
-  z-index: 1;
+  right: 0;
 }
 @mixin steps {
   position: absolute;
   background: url("../img/steps.png") no-repeat;
-  background-size: auto 35%;
-  background-position: left 3% bottom 0%;
-  width: 100%;
+  background-size: 100% auto;
+  background-position: right 10px bottom 0;
+  width: 22%;
   height: 105%;
   top: 0;
   left: 0;
-  z-index: 1;
 }
 @mixin grindz {
   position: absolute;
   background: url("../img/grindz.png") no-repeat;
-  background-size: 20% auto;
-  background-position: right -1% bottom 10%;
-  width: 100%;
+  background-size: 100% auto;
+  background-position: left 10px bottom 10%;
+  width: 23%;
   height: 105%;
   top: 0;
-  left: 0;
-  z-index: 1;
+  right: 0;
 }
 
 #home {
 
-  section, section.hero {
+  section, {
     margin: 0;
     background-repeat: repeat-x;
     background-size: auto 100%;
@@ -242,179 +240,186 @@
       }
     }
 
-    h1 {
-      img {
-        max-width: 500px;
-        width: 70%;
+    &.hero .container {
+      position: relative;
+      z-index: 2;
+      h1 {
+        img {
+          max-width: 500px;
+          width: 70%;
+          @media (max-width: $breakpoint-smaller), (max-width: $breakpoint-small) and (orientation: landscape) {
+            max-width: 300px;
+          }
+        }
+      }
+      p {
+        width: 50%;
+        margin-left: auto; margin-right: auto;
+
+        @media (max-width: $breakpoint-smaller), (max-width: $breakpoint-small) and (orientation: landscape) {
+          font-size: 1.5em;
+          margin-bottom: .8em;
+        }
+
+        @media (max-width: $breakpoint-smaller) {
+          width: 75%;
+        }
+
+        @media (min-width: $breakpoint-medium) {
+          width: 580px;
+        }
       }
     }
   }
 
   .hero {
     background-color: #AEAF7B;
-    background-image: url("../img/back1.jpg");
+    background-image: url("../img/back1.png");
     min-height: 80vh;
-    .column {
-      margin-bottom: auto;
-    }
-    @media (min-width: $breakpoint-medium) {
-      .column {
-        width: 580px;
-      }
-    }
-    .side-art {
+
+    .side-art.palms {
       &::before {
         @include palm1;
-        @media (max-width: $breakpoint-small - 1) {
-          background-size: 50% auto;
-          background-position: top 5% left -20%;
+        /*@media (max-width: $breakpoint-smaller - 1) {
+          width: 35%;
+          background-position-y: 8%;
         }
-      }
-      &.off::before {
-        @include off-left;
-      }
-
-
-      & .side-art::before {
-        @include palm4;
-        @media (max-width: $breakpoint-small - 1) {
-          background-size: 50% auto;
-          background-position: bottom 5% right -20%;
+        @media (max-width: $breakpoint-small - 1) and (orientation: portrait) {
+          width: 30%;
+          background-position-y: 10%;
         }
-      }
-      &.off .side-art::before {
-        @include off-right;
+        @media (min-width: $breakpoint-large) {
+          max-width: 550px;
+        }*/
       }
 
       &::after {
-        @include ligths1;
-        @media (max-width: $breakpoint-small - 1) {
-          background-size: auto 25%;
+        @include palm4;
+        /*@media (max-width: $breakpoint-small - 1) and (orientation: portrait) {
+          width: 30%;
+          height: 102.5%;
         }
+        @media (max-width: $breakpoint-smaller - 1) {
+          width: 35%;
+          height: 102.5%;
+        }
+        @media (min-width: $breakpoint-large) {
+          max-width: 550px;
+        }*/
       }
-      &.off::after {
-        @include off-top;
+    }
+
+    .side-art.ligths {
+      &::before {
+        @include ligths1;
+        @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
+          height: calc(35% - 2em);
+        }
+        @media (max-width: $breakpoint-small - 1) and (orientation: landscape) {
+          height: calc(30% - 1.75em);
+        }
+        @media (max-width: $breakpoint-smaller - 1) {
+          height: calc(32% + .3em);
+        }
+        @media (min-width: $breakpoint-large) {
+          height: calc(35% - 3em);
+        }
       }
 
-      & .side-art::after {
+      &::after {
         @include ligths2;
-        @media (max-width: $breakpoint-small - 1) {
-          background-size: auto 25%;
+        @media (min-width: $breakpoint-large), (max-width: $breakpoint-small - 1) and (orientation: portrait) {
+          height: 35%;
         }
-      }
-      &.off::after {
-        @include off-top;
+        @media (max-width: $breakpoint-small - 1) and (orientation: landscape) {
+          height: 30%;
+        }
       }
     }
   }
 
   .next {
     background-color: #B4CBBF;
-    background-image:url("../img/back2.jpg");
+    background-image:url("../img/back2.png");
     min-height: 65vh;
 
-    .side-art {
+    .side-art.tiles {
       &::before {
         @include tiles1;
-        @media (max-width: $breakpoint-large - 1) {
-          background-position: top 0 left -20%;
+        @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
+          width: 35%;
         }
-        @media (max-width: $breakpoint-medium - 1) {
-          background-position: top 0 left -30%;
+        @media (min-width: $breakpoint-large) {
+          max-width: 370px;
         }
-        @media (max-width: $breakpoint-small - 1) {
-          background-position: top 0 left -50%;
+        @media (min-width: $breakpoint-large * 2) {
+          max-width: 470px;
         }
-        @media (max-width: $breakpoint-smaller - 1) {
-          background-position: top left -20%;
-          background-size: auto 70%;
-        }
-      }
-      &.off::before {
-        background-position: top 0 left -400%;
-        background-size: 100% 0;
       }
 
       &::after {
         @include tiles2;
-        @media (max-width: $breakpoint-large - 1) {
-          background-position: top 0 right -20%;
+        @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
+          width: 35%;
         }
-        @media (max-width: $breakpoint-medium - 1) {
-          background-position: top 0 right -30%;
+        @media (min-width: $breakpoint-large) {
+          max-width: 370px;
         }
-        @media (max-width: $breakpoint-small - 1) {
-          background-position: top 0 right -50%;
+        @media (min-width: $breakpoint-large * 2) {
+          max-width: 470px;
         }
-        @media (max-width: $breakpoint-smaller - 1) {
-          background-position: bottom right -25%;
-          background-size: auto 65%;
-        }
-      }
-      &.off::after {
-        background-position: top 0 right -400%;
-        background-size: 100% 0;
       }
     }
   }
 
   .bazaar {
     background-color: #A8876B;
-    background-image:url("../img/back3.jpg");
+    background-image:url("../img/back3.png");
     min-height: 50vh;
 
-    .side-art {
-      &::before {
-        @include beachscape;
-        @media (max-width: $breakpoint-small - 1) {
-          background-size: 98% auto;
-          background-position: left bottom;
-        }
-      }
-      &.off::before {
-        @include off-left;
-      }
-
-      &::after {
-        @include sun;
-        @media (max-width: $breakpoint-small - 1) {
-          background-size: auto 50%;
-        }
-      }
-      &.off::after {
-        @include off-right;
-      }
-
-      & .side-art::before {
+    .side-art.silhouette {
+      &:after {
         @include palm5;
+        @media (min-width: $breakpoint-large) {
+          max-width: 525px;
+        }
         @media (max-width: $breakpoint-small - 1) {
-          background-size: auto 50%;
+          width: 30%;
         }
       }
-      &.off .side-art::before {
-        @include off-left;
-      }
 
-      & .side-art::after {
-        background: none;
+      &:before {
+        @include beachscape;
+        @media (min-width: $breakpoint-large) {
+          max-width: 900px;
+        }
+        @media (max-width: $breakpoint-small - 1) {
+          width: 52.5%;
+        }
+      }
+    }
+
+    .side-art.sun {
+      &:after {
+        @include sun;
+        @media (min-width: $breakpoint-large) {
+          max-width: 375px;
+        }
+        @media (max-width: $breakpoint-small - 1) {
+          width: 25%;
+        }
       }
     }
   }
 
   .elsewhere {
     background-color: #D0D6AD;
-    background-image:url("../img/back4.jpg");
+    background-image:url("../img/back4.png");
     min-height: 40vh;
 
-    .side-art {
+    .side-art.road {
       &::before {
-        @include crossing;
-        @media (max-width: $breakpoint-small - 1) {
-          background-position: bottom 0 left -50%;
-        }
-      }
-      &.off ::before {
-        // @include off-left;
+        @include tire;
       }
 
       &::after {
@@ -425,7 +430,7 @@
 
   .data {
     background-color: #A5CEAC;
-    background-image:url("../img/back5.jpg");
+    background-image:url("../img/back5.png");
     min-height: 65vh;
     .data-value {
       display: block;
@@ -453,11 +458,11 @@
 
   .map {
     background-color: #D8C6B2;
-    background-image: url("../img/map.png"), url("../img/back6.jpg");
+    background-image: url("../img/map.png"), url("../img/back6.png");
     background-repeat: no-repeat, repeat-x;
     background-position: left 60% center, center;
     background-size: cover;
-    @media (max-width: $breakpoint-small - 1) {
+    @media (max-width: $breakpoint-small ) {
       background-position: bottom 35% left 45%, center;
       background-size: auto 150%, cover;
     }
@@ -506,54 +511,54 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 .about {
   .sub-hero .featured {
     background-color: #aeaf7b;
-    background-image: linear-gradient(rgba(174, 175, 123, 0.5),rgba(174, 175, 123, 0.5)), url("../img/about-photo.jpg");
+    background-image: linear-gradient(rgba(174, 175, 123, 0.5),rgba(174, 175, 123, 0.5)), url("../img/about-photo.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: bottom center;
-    @media (max-width: $breakpoint-small - 1) {
+    @media (max-width: $breakpoint-small ) {
       background-position: bottom 40% center;
     }
-    @media (max-width: $breakpoint-smaller - 1) {
+    @media (max-width: $breakpoint-smaller ) {
       background-size: auto 200%;
     }
   }
 
   .side-art {
     &::before {
-      @include palm3
+      @include palm3;
       background-position: bottom 50% left -5%;
       height: 150%;
-      @media (max-width: $breakpoint-small - 1) {
+      @media (max-width: $breakpoint-small ) {
         background-size: 50% auto;
       }
     }
-    &.off::before {
-      @include off-left;
+    &.on::before {
+      @include on-left;
     }
 
     &::after{
-      @include palm4
+      @include palm4;
       background-position: bottom 35% right -10%;
       height: 150%;
-      @media (max-width: $breakpoint-small - 1) {
+      @media (max-width: $breakpoint-small ) {
         background-size: 50% auto;
       }
     }
-    &.off::after {
-      @include off-right;
+    &.on::after {
+      @include on-right;
     }
 
     .side-art::before {
-      @include ligths1
+      @include ligths1;
       background-position: top;
-      @media (max-width: $breakpoint-small - 1) {
+      @media (max-width: $breakpoint-small ) {
         background-size: auto 51%;
         background-position: top -35% center;
       }
     }
-    &.off .side-art::before {
-      @include off-top;
+    &.on .side-art::before {
+      @include on-top;
     }
 
     .side-art::after {
@@ -569,7 +574,7 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
     background-position: no-repeat;
     background-size: 100% auto;
     background-position: bottom 40% center;
-    @media (max-width: $breakpoint-small - 1) {
+    @media (max-width: $breakpoint-small ) {
       background-position: top 75% center;
     }
   }
@@ -623,13 +628,13 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
     background-position: no-repeat;
     background-size: 100% auto;
     background-position: bottom 40% center;
-    @media (max-width: $breakpoint-small - 1) {
+    @media (max-width: $breakpoint-small ) {
       background-position: top 75% center;
     }
   }
 
   .side-art::before {
-    @include crossing
+    @include tire
     background-position: bottom 0 left -5%;
     background-size: auto 90%;
     height: 110%;
@@ -649,7 +654,7 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
     background-position: no-repeat;
     background-size: 100% auto;
     background-position: bottom 40% center;
-    @media (max-width: $breakpoint-small - 1) {
+    @media (max-width: $breakpoint-small ) {
       background-position: top 75% center;
     }
   }
@@ -673,7 +678,7 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 
 #all-events .event-listing li {
   background-color: #ECECDB;
-  background-image: url("../img/back4.jpg");
+  background-image: url("../img/back4.png");
   background-position: bottom;
   background-size: cover;
   position: relative;
@@ -710,10 +715,10 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 
   &:hover {
     background-color: #ECECDB;
-    background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url("../img/back4.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url("../img/back4.png");
   }
 
-  @media (max-width: $breakpoint-smaller - 1) {
+  @media (max-width: $breakpoint-smaller ) {
     height: 25em;
     position: sticky;
     &::before{
@@ -725,11 +730,13 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 
 .event-subs {
   font-family: $alternative-font-family;
+  position: absolute;
   font-size: 1em;
   text-transform: uppercase;
   margin: auto;
-  display: block;
+  display: inline-block;
   text-align: left;
+  left: 4%;
   top: 10px;
   z-index: 2;
 }
@@ -746,7 +753,7 @@ section:hover .sec-subs:after, .section:focus .sec-subs:after {
 }
 
 li:hover .event-subs:after, li:focus .event-subs:after {
-  width: 30%;
+  width: 100%;
 }
 
 // HELPERS
@@ -771,7 +778,7 @@ li:hover .event-subs:after, li:focus .event-subs:after {
   margin-bottom: .5em;
   box-shadow: inset 0 -10px 10px 0 rgba(0,0,0,.025);
   background-color: #D8C6B2;
-  background-image: url("../img/map.png"), url("../img/back6.jpg");
+  background-image: url("../img/map.png"), url("../img/back6.png");
   background-repeat: no-repeat, repeat-x;
   background-position: top, center;
   background-size: cover, contain;
