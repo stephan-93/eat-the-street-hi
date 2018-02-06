@@ -63,17 +63,29 @@ body main {
   top: 2.5%;
   left: 0;
   z-index: 1;
+  @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
+    width: 30%;
+  }
+  @media (min-width: $breakpoint-large) {
+    max-width: 550px;
+  }
 }
 @mixin palm3 {
   position: absolute;
   background: url("../img/palm3.png") no-repeat;
-  background-size: 100% auto;
-  background-position: left -5em top 20px;
-  width: 45%;
-  height: 105%;
-  top: 0;
-  right: 0;
+  background-size: contain;
+  background-position: left top;
+  width: 25%;
+  height: 75%;
+  top: 2.5%;
+  left: 0;
   z-index: 1;
+  @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
+    width: 30%;
+  }
+  @media (min-width: $breakpoint-large) {
+    max-width: 550px;
+  }
 }
 @mixin palm4 {
   position: absolute;
@@ -85,6 +97,12 @@ body main {
   bottom: -3%;
   right: 0;
   z-index: 1;
+  @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
+    width: 30%;
+  }
+  @media (min-width: $breakpoint-large) {
+    max-width: 550px;
+  }
 }
 @mixin ligths1 {
   position: absolute;
@@ -96,6 +114,18 @@ body main {
   top: 0; left: 0; right: 0;
   z-index: 3;
   image-rendering: crisp-edges;
+  @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
+    height: calc(35% - 2em);
+  }
+  @media (max-width: $breakpoint-small - 1) and (orientation: landscape) {
+    height: calc(30% - 1.75em);
+  }
+  @media (max-width: $breakpoint-smaller - 1) {
+    height: calc(32% + .3em);
+  }
+  @media (min-width: $breakpoint-large) {
+    height: calc(35% - 3em);
+  }
 }
 @mixin ligths2 {
   position: absolute;
@@ -107,6 +137,12 @@ body main {
   top: 0; left: 0; right: 0;
   z-index: 2;
   image-rendering: crisp-edges;
+  @media (min-width: $breakpoint-large), (max-width: $breakpoint-small - 1) and (orientation: portrait) {
+    height: 35%;
+  }
+  @media (max-width: $breakpoint-small - 1) and (orientation: landscape) {
+    height: 30%;
+  }
 }
 @mixin tiles1 {
   position: absolute;
@@ -118,6 +154,15 @@ body main {
   top: -7.5%;
   left: 0;
   z-index: 1;
+  @media (max-width: $breakpoint-small - 1){
+    width: 35%;
+  }
+  @media (min-width: $breakpoint-large) {
+    max-width: 370px;
+  }
+  @media (min-width: $breakpoint-large * 2) {
+    max-width: 470px;
+  }
 }
 @mixin tiles2 {
   position: absolute;
@@ -129,6 +174,15 @@ body main {
   bottom: -4%;
   right: 0;
   z-index: 1;
+  @media (max-width: $breakpoint-small - 1){
+    width: 35%;
+  }
+  @media (min-width: $breakpoint-large) {
+    max-width: 370px;
+  }
+  @media (min-width: $breakpoint-large * 2) {
+    max-width: 470px;
+  }
 }
 @mixin palm5 {
   position: absolute;
@@ -140,6 +194,15 @@ body main {
   top: 22%;
   left: 0;
   z-index: 1;
+  @media (min-width: $breakpoint-large) {
+    max-width: 525px;
+  }
+  @media (max-width: $breakpoint-small - 1) {
+    width: 30%;
+  }
+  @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium){
+    top: 15%;
+  }
 }
 @mixin beachscape {
   position: absolute;
@@ -152,6 +215,12 @@ body main {
   left: 0;
   z-index: 1;
   image-rendering: crisp-edges;
+  @media (min-width: $breakpoint-large) {
+    max-width: 900px;
+  }
+  @media (max-width: $breakpoint-small - 1) {
+    width: 52.5%;
+  }
 }
 @mixin sun {
   position: absolute;
@@ -163,6 +232,12 @@ body main {
   bottom: -2.5%;
   right: 0;
   z-index: 1;
+  @media (min-width: $breakpoint-large) {
+    max-width: 375px;
+  }
+  @media (max-width: $breakpoint-small - 1) {
+    width: 30%;
+  }
 }
 @mixin tire {
   position: absolute;
@@ -174,6 +249,10 @@ body main {
   top: 15%;
   left: 0;
   z-index: 1;
+  @media (max-width: $breakpoint-small - 1) {
+    width: 42%;
+    background-position-y: top;
+  }
 }
 @mixin lane {
   position: absolute;
@@ -185,6 +264,9 @@ body main {
   bottom: -5%;
   right: 0;
   z-index: 1;
+  @media (max-width: $breakpoint-small - 1) {
+    width: 35%;
+  }
 }
 @mixin ligths4 {
   position: absolute;
@@ -196,6 +278,12 @@ body main {
   top: 0;
   left: 0;
   z-index: 1;
+  @media  (min-width: $breakpoint-large){
+    max-width: 1000px;
+  }
+  @media (max-width: $breakpoint-small - 1) {
+    width: 99%;
+  }
 }
 @mixin spent {
   position: absolute;
@@ -207,6 +295,16 @@ body main {
   top: 5%;
   right: 2%;
   z-index: 1;
+  @media (max-width: $breakpoint-small - 1) {
+    top: 10%;
+    width: 45%;
+  }
+  @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium){
+    width: 20%;
+  }
+  @media  (min-width: $breakpoint-large){
+    max-width: 450px;
+  }
 }
 @mixin steps {
   position: absolute;
@@ -218,6 +316,12 @@ body main {
   bottom: -2%;
   left: 0;
   z-index: 1;
+  @media (max-width: $breakpoint-small - 1) {
+    width: 50%;
+  }
+  @media  (min-width: $breakpoint-large){
+    max-width: 550px;
+  }
 }
 @mixin grindz {
   position: absolute;
@@ -229,6 +333,15 @@ body main {
   bottom: 4%;
   right: 0;
   z-index: 1;
+  @media  (min-width: $breakpoint-large){
+    height: 30%;
+    max-width: 500px;
+  }
+  @media (max-width: $breakpoint-small - 1) {
+    bottom: 20%;
+    height: 25%;
+    width: 45%;
+  }
 }
 
 #home {
@@ -287,50 +400,20 @@ body main {
     .side-art.palms {
       &::before {
         @include palm1;
-        @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
-          width: 30%;
-        }
-        @media (min-width: $breakpoint-large) {
-          max-width: 550px;
-        }
       }
 
       &::after {
         @include palm4;
-        @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
-          width: 30%;
-        }
-        @media (min-width: $breakpoint-large) {
-          max-width: 550px;
-        }
       }
     }
 
     .side-art.ligths {
       &::before {
         @include ligths1;
-        @media (max-width: $breakpoint-small - 1) and (orientation: portrait){
-          height: calc(35% - 2em);
-        }
-        @media (max-width: $breakpoint-small - 1) and (orientation: landscape) {
-          height: calc(30% - 1.75em);
-        }
-        @media (max-width: $breakpoint-smaller - 1) {
-          height: calc(32% + .3em);
-        }
-        @media (min-width: $breakpoint-large) {
-          height: calc(35% - 3em);
-        }
       }
 
       &::after {
         @include ligths2;
-        @media (min-width: $breakpoint-large), (max-width: $breakpoint-small - 1) and (orientation: portrait) {
-          height: 35%;
-        }
-        @media (max-width: $breakpoint-small - 1) and (orientation: landscape) {
-          height: 30%;
-        }
       }
     }
   }
@@ -343,28 +426,10 @@ body main {
     .side-art.tiles {
       &::before {
         @include tiles1;
-        @media (max-width: $breakpoint-small - 1){
-          width: 35%;
-        }
-        @media (min-width: $breakpoint-large) {
-          max-width: 370px;
-        }
-        @media (min-width: $breakpoint-large * 2) {
-          max-width: 470px;
-        }
       }
 
       &::after {
         @include tiles2;
-        @media (max-width: $breakpoint-small - 1){
-          width: 35%;
-        }
-        @media (min-width: $breakpoint-large) {
-          max-width: 370px;
-        }
-        @media (min-width: $breakpoint-large * 2) {
-          max-width: 470px;
-        }
       }
     }
   }
@@ -377,37 +442,16 @@ body main {
     .side-art.silhouette {
       &:after {
         @include palm5;
-        @media (min-width: $breakpoint-large) {
-          max-width: 525px;
-        }
-        @media (max-width: $breakpoint-small - 1) {
-          width: 30%;
-        }
-        @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium){
-          top: 15%;
-        }
       }
 
       &:before {
         @include beachscape;
-        @media (min-width: $breakpoint-large) {
-          max-width: 900px;
-        }
-        @media (max-width: $breakpoint-small - 1) {
-          width: 52.5%;
-        }
       }
     }
 
     .side-art.sun {
       &:after {
         @include sun;
-        @media (min-width: $breakpoint-large) {
-          max-width: 375px;
-        }
-        @media (max-width: $breakpoint-small - 1) {
-          width: 30%;
-        }
       }
     }
   }
@@ -420,17 +464,10 @@ body main {
     .side-art.road {
       &::before {
         @include tire;
-        @media (max-width: $breakpoint-small - 1) {
-          width: 42%;
-          background-position-y: top;
-        }
       }
 
       &::after {
         @include lane;
-        @media (max-width: $breakpoint-small - 1) {
-          width: 35%;
-        }
       }
     }
   }
@@ -468,50 +505,18 @@ body main {
 
     #events .side-art::before {
       @include ligths4;
-      @media  (min-width: $breakpoint-large){
-        max-width: 1000px;
-      }
-
-      @media (max-width: $breakpoint-small - 1) {
-        width: 99%;
-      }
     }
 
     #spent .side-art::after {
       @include spent;
-      @media (max-width: $breakpoint-small - 1) {
-        top: 10%;
-        width: 45%;
-      }
-      @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium){
-        width: 20%;
-      }
-      @media  (min-width: $breakpoint-large){
-        max-width: 450px;
-      }
     }
 
     #attendees .side-art::before {
       @include steps;
-      @media (max-width: $breakpoint-small - 1) {
-        width: 50%;
-      }
-      @media  (min-width: $breakpoint-large){
-        max-width: 550px;
-      }
     }
 
     #grindz .side-art::after {
       @include grindz;
-      @media  (min-width: $breakpoint-large){
-        height: 30%;
-        max-width: 500px;
-      }
-      @media (max-width: $breakpoint-small - 1) {
-        bottom: 20%;
-        height: 25%;
-        width: 45%;
-      }
     }
   }
 
@@ -552,7 +557,8 @@ body main {
   border-bottom: 3px solid $link-color;
   width: 0%;
   position: absolute;
-  left: .5em;
+  margin-top: .5em;
+  left: 1.5em;
   transition: .3s width ease-in;
 }
 
@@ -561,59 +567,60 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
 }
 
 // SUBPAGES CUSTOMIZATION
-.sub-hero .featured {
-  height: 45vh;
-  min-height: 300px;
-  position: relative;
+.sub-hero {
+  margin-bottom: 2em;
+  .featured {
+    height: 30vh;
+    min-height: 300px;
+    position: relative;
+    margin-bottom: 2em;
+    @media (max-width: $breakpoint-small) and (orientation: landscape) {
+      min-height: 200px;
+    }
+  }
+  p {
+    font-style: italic;
+  }
 }
 
 .about {
   .sub-hero .featured {
-    background-color: #aeaf7b;
-    background-image: linear-gradient(rgba(174, 175, 123, 0.5),rgba(174, 175, 123, 0.5)), url("../img/about-photo.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: bottom center;
-    @media (max-width: $breakpoint-small ) {
-      background-position: bottom 40% center;
-    }
-    @media (max-width: $breakpoint-smaller ) {
-      background-size: auto 200%;
-    }
+    background-color: #AEAF7B;
+    background-image: url("../img/back1.png");
   }
 
-  .side-art {
+  .side-art.palms {
     &::before {
-      @include palm3
+      @include palm3;
     }
 
     &::after{
       @include palm4;
-      background-position: bottom 35% right -10%;
-      height: 150%;
-      @media (max-width: $breakpoint-small ) {
-        background-size: 50% auto;
-      }
     }
-    &.on::after {
-      @include on-right;
-    }
+  }
 
-    .side-art::before {
+  .side-art.ligths {
+    &::before {
       @include ligths1;
-      background-position: top;
-      @media (max-width: $breakpoint-small ) {
-        background-size: auto 51%;
-        background-position: top -35% center;
-      }
-    }
-    &.on .side-art::before {
-      @include on-top;
     }
 
-    .side-art::after {
-      background: none;
+    &::after{
+      @include ligths2;
+    }
+  }
+
+  ul li {
+    overflow: hidden;
+    height: 0;
+    padding: 0;
+    padding-bottom: 30%;
+    img {
+      width: 100%;
+      &.landscape {
+        position: relative;
+        width: 200%;
+        left: -50%;
+      }
     }
   }
 }
