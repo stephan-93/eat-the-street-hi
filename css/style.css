@@ -782,7 +782,7 @@ ul.list-grid {
         margin-left: auto; }
       ul.list-grid li:nth-child(3n+1).one-third {
         margin-left: auto; } }
-    @media (min-width: 480px) and (max-width: 768px) {
+    @media (min-width: 480px) and (max-width: 767px) {
       ul.list-grid li:nth-child(2n+1).one-half {
         margin-left: auto; }
       ul.list-grid li.goes-half {
@@ -1220,6 +1220,22 @@ form input[type=reset] {
 #SECTIONS
 --------------------------------- */
 /* Custom Overrides */
+body {
+  -webkit-animation: fadein 2s;
+  animation: fadein 2s; }
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 .site-navigation {
   text-transform: uppercase; }
 
@@ -1238,8 +1254,8 @@ body main {
 .side-art::after, .side-art::before {
   content: '';
   pointer-events: none;
-  -webkit-transition: all 2s ease;
-  transition: all 2s ease; }
+  -webkit-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 #home section {
   margin: 0;
@@ -1617,8 +1633,8 @@ body main {
   position: absolute;
   margin-top: .5em;
   left: 1.5em;
-  -webkit-transition: .3s width ease-in;
-  transition: .3s width ease-in; }
+  -webkit-transition: .2s width ease-in;
+  transition: .2s width ease-in; }
 
 section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.on:after {
   width: 100%; }
@@ -1626,15 +1642,20 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
 .sub-hero {
   margin-bottom: 2em; }
   .sub-hero .featured {
-    height: 30vh;
-    min-height: 300px;
+    min-height: 50vh;
+    max-height: 300px;
     position: relative;
-    margin-bottom: 2em; }
+    margin-bottom: 2em;
+    background-size: auto 100%;
+    background-repeat: repeat-x; }
     @media (max-width: 768px) and (orientation: landscape) {
       .sub-hero .featured {
         min-height: 200px; } }
   .sub-hero p {
     font-style: italic; }
+  .sub-hero h1 {
+    font-weight: 900;
+    color: white; }
 
 .about .sub-hero .featured {
   background-color: #AEAF7B;
@@ -1718,29 +1739,65 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
     .about .side-art.ligths::after {
       height: 30%; } }
 
-.about ul li {
-  overflow: hidden;
-  height: 0;
-  padding: 0;
-  padding-bottom: 30%; }
-  .about ul li img {
-    width: 100%; }
-    .about ul li img.landscape {
-      position: relative;
-      width: 200%;
-      left: -50%; }
+.about ul.list-grid {
+  margin-top: 3em; }
+  .about ul.list-grid li {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding: 0;
+    padding-bottom: 30%; }
+    @media (max-width: 767px) {
+      .about ul.list-grid li {
+        padding-bottom: 47.5%; } }
+    @media (max-width: 479px) {
+      .about ul.list-grid li {
+        padding-bottom: 100%; } }
+    .about ul.list-grid li img {
+      width: 100%; }
+    .about ul.list-grid li:nth-child(2) img {
+      width: 190%;
+      position: absolute;
+      top: 0;
+      right: -40%; }
+    .about ul.list-grid li:nth-child(3) img {
+      width: 110%; }
+    .about ul.list-grid li:nth-child(6) img {
+      width: 180%;
+      position: absolute;
+      bottom: -20%;
+      right: -20%; }
+    .about ul.list-grid li:nth-child(9) img {
+      width: 180%;
+      position: absolute;
+      bottom: -20%;
+      right: -40%; }
 
 .sunset-bazaar .sub-hero .featured {
   background-color: #A8876B;
-  background-image: url("");
-  background-position: no-repeat;
-  background-size: 100% auto;
-  background-position: bottom 40% center; }
-  @media (max-width: 768px) {
-    .sunset-bazaar .sub-hero .featured {
-      background-position: top 75% center; } }
+  background-image: url("../img/back3.png"); }
 
-.sunset-bazaar .side-art::before {
+.sunset-bazaar .side-art.silhouette:after {
+  position: absolute;
+  background: url("../img/palm5.png") no-repeat;
+  background-size: contain;
+  background-position: left top;
+  width: 22%;
+  height: 50%;
+  top: 22%;
+  left: 0;
+  z-index: 1; }
+  @media (min-width: 1250px) {
+    .sunset-bazaar .side-art.silhouette:after {
+      max-width: 525px; } }
+  @media (max-width: 767px) {
+    .sunset-bazaar .side-art.silhouette:after {
+      width: 30%; } }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .sunset-bazaar .side-art.silhouette:after {
+      top: 15%; } }
+
+.sunset-bazaar .side-art.silhouette:before {
   position: absolute;
   background: url("../img/beachscape.png") no-repeat;
   background-size: contain;
@@ -1750,17 +1807,15 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
   bottom: -1%;
   left: 0;
   z-index: 1;
-  image-rendering: crisp-edges;
-  background-position: bottom left;
-  height: 105%; }
+  image-rendering: crisp-edges; }
   @media (min-width: 1250px) {
-    .sunset-bazaar .side-art::before {
+    .sunset-bazaar .side-art.silhouette:before {
       max-width: 900px; } }
   @media (max-width: 767px) {
-    .sunset-bazaar .side-art::before {
+    .sunset-bazaar .side-art.silhouette:before {
       width: 52.5%; } }
 
-.sunset-bazaar .side-art::after {
+.sunset-bazaar .side-art.sun:after {
   position: absolute;
   background: url("../img/sun.png") no-repeat;
   background-size: contain;
@@ -1769,48 +1824,42 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
   height: 60%;
   bottom: -2.5%;
   right: 0;
-  z-index: 1;
-  background-position: bottom right -2.5%;
-  height: 120%; }
+  z-index: 1; }
   @media (min-width: 1250px) {
-    .sunset-bazaar .side-art::after {
+    .sunset-bazaar .side-art.sun:after {
       max-width: 375px; } }
   @media (max-width: 767px) {
-    .sunset-bazaar .side-art::after {
+    .sunset-bazaar .side-art.sun:after {
       width: 30%; } }
-
-.sunset-bazaar .side-art .side-art::before {
-  position: absolute;
-  background: url("../img/palm5.png") no-repeat;
-  background-size: contain;
-  background-position: left top;
-  width: 22%;
-  height: 50%;
-  top: 22%;
-  left: 0;
-  z-index: 1;
-  background-position: top 5% left -5%; }
-  @media (min-width: 1250px) {
-    .sunset-bazaar .side-art .side-art::before {
-      max-width: 525px; } }
-  @media (max-width: 767px) {
-    .sunset-bazaar .side-art .side-art::before {
-      width: 30%; } }
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .sunset-bazaar .side-art .side-art::before {
-      top: 15%; } }
-
-.sunset-bazaar .side-art .side-art::after {
-  background: none; }
 
 .monthly-event .sub-hero .featured {
   background-color: #B4CBBF;
-  background-image: url("");
-  background-position: no-repeat;
-  background-size: 100% auto;
-  background-position: bottom 40% center; }
+  background-image: url("../img/back2.png"); }
 
-.monthly-event .side-art::before {
+.monthly-event .side-art.tiles::before {
+  position: absolute;
+  background: url("../img/tiles1.png") no-repeat;
+  background-size: auto 100%;
+  background-position: right top 0;
+  width: 28%;
+  height: 110%;
+  top: -7.5%;
+  left: 0;
+  z-index: 1; }
+  @media (max-width: 767px) {
+    .monthly-event .side-art.tiles::before {
+      width: 35%; } }
+  @media (min-width: 1250px) {
+    .monthly-event .side-art.tiles::before {
+      max-width: 370px; } }
+  @media (min-width: 2500px) {
+    .monthly-event .side-art.tiles::before {
+      max-width: 470px; } }
+  @media (orientation: landscape) {
+    .monthly-event .side-art.tiles::before {
+      background-position: left; } }
+
+.monthly-event .side-art.tiles::after {
   position: absolute;
   background: url("../img/tiles2.png") no-repeat;
   background-size: auto 100%;
@@ -1819,54 +1868,25 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
   height: 103%;
   bottom: -4%;
   right: 0;
-  z-index: 1;
-  background-position: bottom 0 left -15%;
-  background-size: auto 120%;
-  height: 120%; }
+  z-index: 1; }
   @media (max-width: 767px) {
-    .monthly-event .side-art::before {
+    .monthly-event .side-art.tiles::after {
       width: 35%; } }
   @media (min-width: 1250px) {
-    .monthly-event .side-art::before {
+    .monthly-event .side-art.tiles::after {
       max-width: 370px; } }
   @media (min-width: 2500px) {
-    .monthly-event .side-art::before {
+    .monthly-event .side-art.tiles::after {
       max-width: 470px; } }
-
-.monthly-event .side-art::after {
-  position: absolute;
-  background: url("../img/tiles2.png") no-repeat;
-  background-size: auto 100%;
-  background-position: left top 0;
-  width: 28%;
-  height: 103%;
-  bottom: -4%;
-  right: 0;
-  z-index: 1;
-  background-position: bottom 0 right -7.5%;
-  background-size: auto 118%;
-  height: 120%; }
-  @media (max-width: 767px) {
-    .monthly-event .side-art::after {
-      width: 35%; } }
-  @media (min-width: 1250px) {
-    .monthly-event .side-art::after {
-      max-width: 370px; } }
-  @media (min-width: 2500px) {
-    .monthly-event .side-art::after {
-      max-width: 470px; } }
+  @media (orientation: landscape) {
+    .monthly-event .side-art.tiles::after {
+      background-position: right; } }
 
 .remote-event .sub-hero .featured {
   background-color: #D0D6AD;
-  background-image: url("");
-  background-position: no-repeat;
-  background-size: 100% auto;
-  background-position: bottom 40% center; }
-  @media (max-width: 768px) {
-    .remote-event .sub-hero .featured {
-      background-position: top 75% center; } }
+  background-image: url("../img/back4.png"); }
 
-.remote-event .side-art::before {
+.remote-event .side-art.road::before {
   position: absolute;
   background: url("../img/tire.png") no-repeat;
   background-size: contain;
@@ -1875,16 +1895,13 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
   height: 87%;
   top: 15%;
   left: 0;
-  z-index: 1;
-  background-position: bottom 0 left -5%;
-  background-size: auto 90%;
-  height: 110%; }
+  z-index: 1; }
   @media (max-width: 767px) {
-    .remote-event .side-art::before {
+    .remote-event .side-art.road::before {
       width: 42%;
       background-position-y: top; } }
 
-.remote-event .side-art::after {
+.remote-event .side-art.road::after {
   position: absolute;
   background: url("../img/lane.png") no-repeat;
   background-size: contain;
@@ -1893,25 +1910,54 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
   height: 90%;
   bottom: -5%;
   right: 0;
-  z-index: 1;
-  background-position: bottom 0 right -5%;
-  background-size: auto 70%;
-  height: 120%; }
+  z-index: 1; }
   @media (max-width: 767px) {
-    .remote-event .side-art::after {
+    .remote-event .side-art.road::after {
       width: 35%; } }
 
 .application .sub-hero .featured {
   background-color: #A5CEAC;
-  background-image: url("");
-  background-position: no-repeat;
-  background-size: 100% auto;
-  background-position: bottom 40% center; }
-  @media (max-width: 768px) {
-    .application .sub-hero .featured {
-      background-position: top 75% center; } }
+  background-image: url("../img/back5.png"); }
 
-.application .side-art::before {
+.application #events-spent.side-art::before {
+  position: absolute;
+  background: url("../img/ligths4.png") no-repeat;
+  background-size: contain;
+  background-position: right 10px top -2px;
+  width: 55%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  z-index: 1; }
+  @media (min-width: 1250px) {
+    .application #events-spent.side-art::before {
+      max-width: 1000px; } }
+  @media (max-width: 767px) {
+    .application #events-spent.side-art::before {
+      width: 99%; } }
+
+.application #events-spent.side-art::after {
+  position: absolute;
+  background: url("../img/spent.png") no-repeat;
+  background-size: contain;
+  background-position: right top;
+  width: 20%;
+  height: 30%;
+  top: 5%;
+  right: 2%;
+  z-index: 1; }
+  @media (max-width: 767px) {
+    .application #events-spent.side-art::after {
+      top: 10%;
+      width: 45%; } }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .application #events-spent.side-art::after {
+      width: 20%; } }
+  @media (min-width: 1250px) {
+    .application #events-spent.side-art::after {
+      max-width: 450px; } }
+
+.application #attendees-grindz.side-art::before {
   position: absolute;
   background: url("../img/steps.png") no-repeat;
   background-size: contain;
@@ -1920,18 +1966,15 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
   height: 35%;
   bottom: -2%;
   left: 0;
-  z-index: 1;
-  background-position: bottom 0 left -2%;
-  background-size: 30% auto;
-  height: 110%; }
+  z-index: 1; }
   @media (max-width: 767px) {
-    .application .side-art::before {
+    .application #attendees-grindz.side-art::before {
       width: 50%; } }
   @media (min-width: 1250px) {
-    .application .side-art::before {
+    .application #attendees-grindz.side-art::before {
       max-width: 550px; } }
 
-.application .side-art::after {
+.application #attendees-grindz.side-art::after {
   position: absolute;
   background: url("../img/grindz.png") no-repeat;
   background-size: contain;
@@ -1940,16 +1983,13 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
   height: 35%;
   bottom: 4%;
   right: 0;
-  z-index: 1;
-  background-position: bottom 5% right -2%;
-  background-size: 30% auto;
-  height: 100%; }
+  z-index: 1; }
   @media (min-width: 1250px) {
-    .application .side-art::after {
+    .application #attendees-grindz.side-art::after {
       height: 30%;
       max-width: 500px; } }
   @media (max-width: 767px) {
-    .application .side-art::after {
+    .application #attendees-grindz.side-art::after {
       bottom: 20%;
       height: 25%;
       width: 45%; } }
@@ -2010,14 +2050,14 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
 
 .event-subs::after {
   content: '';
-  overflow: hidden;
   display: block;
   border-bottom: 3px solid #F5C815;
   width: 0%;
-  position: relative;
-  left: .5em;
-  -webkit-transition: .3s width ease-in;
-  transition: .3s width ease-in; }
+  position: absolute;
+  margin-top: .5em;
+  left: 1.5em;
+  -webkit-transition: .2s width ease-in;
+  transition: .2s width ease-in; }
 
 li:hover .event-subs:after, li:focus .event-subs:after {
   width: 100%; }

@@ -19,6 +19,15 @@
 
 /* Custom Overrides */
 
+body {
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {opacity:0;}
+  to {opacity: 1;}
+}
+
 .site-navigation {
   text-transform: uppercase;
 }
@@ -45,13 +54,8 @@ body main {
 .side-art::after, .side-art::before {
   content: '';
   pointer-events: none;
-  transition: all 2s ease;
+  transition: all 1s cubic-bezier(.68,-0.55,0.265,1.55);
 }
-
-@mixin on-left {right: 100%;}
-@mixin on-right {left: 100%;}
-@mixin on-top {top: -120%;}
-@mixin on-bottom {bottom: 200%;}
 
 @mixin palm1 {
   position: absolute;
@@ -559,7 +563,7 @@ body main {
   position: absolute;
   margin-top: .5em;
   left: 1.5em;
-  transition: .3s width ease-in;
+  transition: .2s width ease-in;
 }
 
 section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.on:after {
@@ -567,19 +571,26 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
 }
 
 // SUBPAGES CUSTOMIZATION
+
 .sub-hero {
   margin-bottom: 2em;
   .featured {
-    height: 30vh;
-    min-height: 300px;
+    min-height: 50vh;
+    max-height: 300px;
     position: relative;
     margin-bottom: 2em;
+    background-size: auto 100%;
+    background-repeat: repeat-x;
     @media (max-width: $breakpoint-small) and (orientation: landscape) {
       min-height: 200px;
     }
   }
   p {
     font-style: italic;
+  }
+  h1 {
+    font-weight: 900;
+    color: white;
   }
 }
 
@@ -609,17 +620,40 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
     }
   }
 
-  ul li {
-    overflow: hidden;
-    height: 0;
-    padding: 0;
-    padding-bottom: 30%;
-    img {
-      width: 100%;
-      &.landscape {
-        position: relative;
-        width: 200%;
-        left: -50%;
+  ul.list-grid {
+    margin-top: 3em;
+    li {
+      position: relative;
+      overflow: hidden;
+      height: 0;
+      padding: 0;
+      padding-bottom: 30%;
+      @media (max-width: $breakpoint-small - 1) {
+        padding-bottom: 47.5%;
+      }
+      @media (max-width:$breakpoint-smaller - 1) {
+        padding-bottom: 100%;
+      }
+      img {
+        width: 100%;
+      }
+      &:nth-child(2) img {
+        width: 190%;
+        position: absolute;
+        top: 0; right: -40%;
+      }
+      &:nth-child(3) img {
+        width: 110%;
+      }
+      &:nth-child(6) img {
+        width: 180%;
+        position: absolute;
+        bottom: -20%; right: -20%;
+      }
+      &:nth-child(9) img {
+        width: 180%;
+        position: absolute;
+        bottom: -20%; right: -40%;
       }
     }
   }
@@ -628,106 +662,86 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
 .sunset-bazaar {
   .sub-hero .featured {
     background-color: #A8876B;
-    background-image: url("");
-    background-position: no-repeat;
-    background-size: 100% auto;
-    background-position: bottom 40% center;
-    @media (max-width: $breakpoint-small ) {
-      background-position: top 75% center;
+    background-image:url("../img/back3.png");
+  }
+
+  .side-art.silhouette {
+    &:after {
+      @include palm5;
+    }
+
+    &:before {
+      @include beachscape;
     }
   }
 
-  .side-art::before {
-    @include beachscape
-    background-position: bottom left;
-    height: 105%;
-  }
-  .side-art::after{
-    @include sun
-    background-position: bottom right -2.5%;
-    height: 120%;
-  }
-  .side-art .side-art::before {
-    @include palm5
-    background-position: top 5% left -5%;
-  }
-
-  .side-art .side-art::after {
-    background: none;
+  .side-art.sun {
+    &:after {
+      @include sun;
+    }
   }
 }
 
 .monthly-event {
   .sub-hero .featured {
     background-color: #B4CBBF;
-    background-image: url("");
-    background-position: no-repeat;
-    background-size: 100% auto;
-    background-position: bottom 40% center;
+    background-image:url("../img/back2.png");
   }
-  .side-art::before {
-    @include tiles2
-    background-position: bottom 0 left -15%;
-    background-size: auto 120%;
-    height: 120%;
-  }
-  .side-art::after{
-    @include tiles2
-    background-position: bottom 0 right -7.5%;
-    background-size: auto 118%;
-    height: 120%;
+  .side-art.tiles {
+    &::before {
+      @include tiles1;
+      @media (orientation: landscape) {
+        background-position: left;
+      }
+    }
+
+    &::after {
+      @include tiles2;
+      @media (orientation: landscape) {
+        background-position: right;
+      }
+    }
   }
 }
 
 .remote-event {
   .sub-hero .featured {
     background-color: #D0D6AD;
-    background-image: url("");
-    background-position: no-repeat;
-    background-size: 100% auto;
-    background-position: bottom 40% center;
-    @media (max-width: $breakpoint-small ) {
-      background-position: top 75% center;
-    }
+    background-image:url("../img/back4.png");
   }
 
-  .side-art::before {
-    @include tire
-    background-position: bottom 0 left -5%;
-    background-size: auto 90%;
-    height: 110%;
-  }
-  .side-art::after{
-    @include lane
-    background-position: bottom 0 right -5%;
-    background-size: auto 70%;
-    height: 120%;
+  .side-art.road {
+    &::before {
+      @include tire;
+    }
+
+    &::after {
+      @include lane;
+    }
   }
 }
+
 
 .application {
   .sub-hero .featured {
     background-color: #A5CEAC;
-    background-image: url("");
-    background-position: no-repeat;
-    background-size: 100% auto;
-    background-position: bottom 40% center;
-    @media (max-width: $breakpoint-small ) {
-      background-position: top 75% center;
-    }
+    background-image:url("../img/back5.png");
   }
 
-  .side-art::before {
-    @include steps
-    background-position: bottom 0 left -2%;
-    background-size: 30% auto;
-    height: 110%;
+  #events-spent.side-art::before {
+    @include ligths4;
   }
-  .side-art::after{
-    @include grindz
-    background-position: bottom 5% right -2%;
-    background-size: 30% auto;
-    height: 100%;
+
+  #events-spent.side-art::after {
+    @include spent;
+  }
+
+  #attendees-grindz.side-art::before {
+    @include steps;
+  }
+
+  #attendees-grindz.side-art::after {
+    @include grindz;
   }
 }
 
@@ -800,14 +814,14 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
 }
 
 .event-subs::after {
-  content:'';
-  overflow: hidden;
+  content: '';
   display: block;
-  border-bottom: 3px solid $link-color;
+  border-bottom: 3px solid #F5C815;
   width: 0%;
-  position: relative;
-  left: .5em;
-  transition: .3s width ease-in;
+  position: absolute;
+  margin-top: .5em;
+  left: 1.5em;
+  transition: .2s width ease-in;
 }
 
 li:hover .event-subs:after, li:focus .event-subs:after {

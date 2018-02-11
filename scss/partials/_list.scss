@@ -33,7 +33,7 @@ ul.list-grid {
     }
 
 
-    @media (min-width: $breakpoint-smaller) and (max-width: $breakpoint-small) {
+    @media (min-width: $breakpoint-smaller) and (max-width: $breakpoint-small - 1) {
       &:nth-child(2n+1).one-half {
         margin-left: auto;
       }

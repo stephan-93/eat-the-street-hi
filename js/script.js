@@ -23,16 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 })
 
-//FIND LANDSCAPE IMG
-$(document).ready(function(){
-  $('.list-grid img').each(function(){
-    // var proportion = ($(this).width() / $(this).height());
-    if ($(this).width() > $(this).height()){
-      $(this).style.width = "2px";
-    }
-  });
-});
-
 //REPLACE LAST SPACE OF PARAGUAPHS WITH NON-BREAK SPACE
 $(document).ready(function(){
 $('p').each(function(){
@@ -40,7 +30,7 @@ $('p').each(function(){
   string = string.replace(/ ([^ ]*)$/,'&nbsp;$1');
   $(this).html(string);
 });
-});
+})
 
 //RESIZE OVERSIDED TEXT IN LISTING
 
