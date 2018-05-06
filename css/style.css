@@ -1265,13 +1265,26 @@ body main {
   -webkit-transform: translateX(100%) scale(0.75) rotate(10deg);
   transform: translateX(100%) scale(0.75) rotate(10deg); }
 
-.side-art.top::before, .side-art.top::after, .side-art.bottom::before, .side-art.bottom::after {
-  -webkit-transform: translateX(0) scale(1) rotate(0);
-  transform: translateX(0) scale(1) rotate(0); }
+@media (max-width: 767px) {
+  section:not(.hero) .side-art::before, section:not(.hero) .side-art::after {
+    -webkit-transform: translateX(0) scale(1) rotate(0);
+    transform: translateX(0) scale(1) rotate(0); } }
 
 .side-art.active::before, .side-art.active::after {
   -webkit-transform: translateX(0) scale(1) rotate(0);
   transform: translateX(0) scale(1) rotate(0); }
+
+@media (max-width: 767px) {
+  section:not(.hero) .side-art.active::before {
+    -webkit-transform: translateX(-100%) scale(0.75) rotate(-10deg);
+    transform: translateX(-100%) scale(0.75) rotate(-10deg); }
+  section:not(.hero) .side-art.active::after {
+    -webkit-transform: translateX(100%) scale(0.75) rotate(10deg);
+    transform: translateX(100%) scale(0.75) rotate(10deg); } }
+
+.side-art.top::before, .side-art.top::after, .side-art.bottom::before, .side-art.bottom::after {
+  -webkit-transform: translateX(0) scale(1) rotate(0) !important;
+  transform: translateX(0) scale(1) rotate(0) !important; }
 
 #home section {
   margin: 0;
@@ -1490,6 +1503,11 @@ body main {
         width: 30%; } }
   #home .bazaar .side-art.sun.active:after {
     background-position: right bottom; }
+  @media (max-width: 767px) {
+    #home .bazaar .side-art.sun::after {
+      background-position: right bottom; }
+    #home .bazaar .side-art.sun.active:after {
+      background-position: right bottom -375px; } }
 
 #home .elsewhere {
   background-color: #D0D6AD;
@@ -1797,26 +1815,6 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
   background-color: #A8876B;
   background-image: url("../img/back3.png"); }
 
-.sunset-bazaar .side-art.silhouette:after {
-  position: absolute;
-  background: url("../img/palm5.png") no-repeat;
-  background-size: contain;
-  background-position: left top;
-  width: 22%;
-  height: 50%;
-  top: 22%;
-  left: 0;
-  z-index: 1; }
-  @media (min-width: 1250px) {
-    .sunset-bazaar .side-art.silhouette:after {
-      max-width: 525px; } }
-  @media (max-width: 767px) {
-    .sunset-bazaar .side-art.silhouette:after {
-      width: 30%; } }
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .sunset-bazaar .side-art.silhouette:after {
-      top: 15%; } }
-
 .sunset-bazaar .side-art.silhouette:before {
   position: absolute;
   background: url("../img/beachscape.png") no-repeat;
@@ -1835,6 +1833,26 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
     .sunset-bazaar .side-art.silhouette:before {
       width: 52.5%; } }
 
+.sunset-bazaar .side-art.silhouette2:before {
+  position: absolute;
+  background: url("../img/palm5.png") no-repeat;
+  background-size: contain;
+  background-position: left top;
+  width: 22%;
+  height: 50%;
+  top: 22%;
+  left: 0;
+  z-index: 1; }
+  @media (min-width: 1250px) {
+    .sunset-bazaar .side-art.silhouette2:before {
+      max-width: 525px; } }
+  @media (max-width: 767px) {
+    .sunset-bazaar .side-art.silhouette2:before {
+      width: 30%; } }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .sunset-bazaar .side-art.silhouette2:before {
+      top: 15%; } }
+
 .sunset-bazaar .side-art.sun:after {
   position: absolute;
   background: url("../img/sun.png") no-repeat;
@@ -1851,6 +1869,9 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
   @media (max-width: 767px) {
     .sunset-bazaar .side-art.sun:after {
       width: 30%; } }
+
+.sunset-bazaar .side-art.sun.active:after {
+  background-position: right bottom; }
 
 .monthly-event .sub-hero .featured {
   background-color: #B4CBBF;

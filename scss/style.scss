@@ -65,10 +65,11 @@ body main {
     transform: translateX(+100%) scale(.75)  rotate(10deg);
   }
 }
-
-.side-art.top,.side-art.bottom, {
-  &::before,&::after{
-    transform: translateX(0) scale(1)  rotate(0);
+section:not(.hero) .side-art{
+  @media (max-width: $breakpoint-small - 1){
+    &::before,&::after{
+      transform: translateX(0) scale(1)  rotate(0);
+    }
   }
 }
 
@@ -77,6 +78,23 @@ body main {
     transform: translateX(0) scale(1)  rotate(0);
   }
 }
+section:not(.hero) .side-art.active{
+  @media (max-width: $breakpoint-small - 1){
+    &::before{
+      transform: translateX(-100%) scale(.75) rotate(-10deg);
+    }
+    &::after{
+      transform: translateX(+100%) scale(.75)  rotate(10deg);
+    }
+  }
+}
+
+.side-art.top,.side-art.bottom, {
+  &::before,&::after{
+    transform: translateX(0) scale(1)  rotate(0) !important;
+  }
+}
+
 
 @mixin palm1 {
   position: absolute;
@@ -489,6 +507,15 @@ body main {
       &.active:after {
         background-position: right bottom;
       }
+
+      @media (max-width:$breakpoint-small - 1) {
+        &::after {
+          background-position: right bottom;
+        }
+        &.active:after {
+          background-position: right bottom -375px;
+        }
+      }
     }
   }
 
@@ -623,6 +650,7 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
   h1 {
     font-weight: 900;
     color: white;
+    // z-index: 5;
   }
 }
 
@@ -698,18 +726,23 @@ section:hover .sec-subs:after, section:focus .sec-subs:after, section .sec-sub.o
   }
 
   .side-art.silhouette {
-    &:after {
-      @include palm5;
-    }
-
     &:before {
       @include beachscape;
+    }
+  }
+
+  .side-art.silhouette2 {
+    &:before {
+      @include palm5;
     }
   }
 
   .side-art.sun {
     &:after {
       @include sun;
+    }
+    &.active:after {
+      background-position: right bottom;
     }
   }
 }
