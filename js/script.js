@@ -34,7 +34,7 @@ $('p').each(function(){
 
 //RESIZE OVERSIDED TEXT IN LISTING
 
-var square = $('#all-events .event-listing');
+/*var square = $('#all-events .event-listing');
 
 
 $(window).on('resize load', function(){
@@ -45,24 +45,38 @@ $(window).on('resize load', function(){
       if (square.width() != square.height()) {
         $(this).find('.h1').addClass("oversized");}
   })
-})
+})*/
 
 // SIZE ART MANIPULATION
 
-/*$('.side-art').addClass('off');
+$(document).ready(function(){
 
- // $(function() {
-   $(window).on('resize load', function(){
-  if ($(window).width() < 769) {
-    $('.side-art').addClass('off');
-    $(window).on("scrollstart",function() {
-      $('.side-art').toggleClass('off');})
-    $(window).on("scrollstop",function() {
-      $('.side-art').toggleClass('off');})
-  } else {
-    $('.side-art').removeClass('off');
-  }
-  })
-// })*/
+// reveal point from bottom and top of the window
+var windowssize = window.innerHeight;
+var revealerpoint = windowssize * .25;
+// console.log(revealerpoint);
+// console.log(windowssize);
+window.addEventListener('scroll', reveal);
+reveal();
 
-$.event.special.scrollstop.latency = 900;
+function reveal() {
+    console.log("scrolling");
+    var sideart = document.querySelectorAll('.side-art');
+    for (var i = 0; i < sideart.length; i++) {
+        var windowheight = window.innerHeight;
+        var revealertop = sideart[i].getBoundingClientRect().top;
+        var revealerbottom = sideart[i].getBoundingClientRect().bottom;
+        // console.log(revealertop);
+        // console.log(revealerbottom);
+        if (revealertop < windowheight - revealerpoint) {
+            sideart[i].classList.add('active')
+        }
+        else {
+            sideart[i].classList.remove('active');
+        };
+        if (revealerbottom < 0 + revealerpoint) {
+            sideart[i].classList.remove('active');
+        }
+    }
+};
+})
